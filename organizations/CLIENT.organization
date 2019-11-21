@@ -28,6 +28,12 @@
     <role name="User">
       <displayName>User</displayName>
     </role>
+    <role name="RndExp">
+      <displayName>RnDExp</displayName>
+    </role>
+    <role name="RnDManager">
+      <displayName>RnDManager</displayName>
+    </role>
   </roles>
   <groups>
     <group name="Client">
@@ -38,6 +44,15 @@
     </group>
     <group name="User" parentPath="/Client">
       <displayName>User</displayName>
+    </group>
+    <group name="Logiciel">
+      <displayName>Logiciel</displayName>
+    </group>
+    <group name="RndExperience" parentPath="/Logiciel">
+      <displayName>RndExperience</displayName>
+    </group>
+    <group name="RndManager" parentPath="/Logiciel">
+      <displayName>RndManager</displayName>
     </group>
   </groups>
   <memberships>

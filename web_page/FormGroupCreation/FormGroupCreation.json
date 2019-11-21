@@ -1,127 +1,15 @@
 {
   "designerVersion" : "1.9.61",
-  "id" : "CreateGroupeForm",
-  "name" : "CreateGroupeForm",
-  "lastUpdate" : 1574348554787,
+  "id" : "FormGroupCreation",
+  "name" : "FormGroupCreation",
+  "lastUpdate" : 1574353691082,
   "rows" : [ [ {
-    "type" : "container",
-    "dimension" : {
-      "xs" : 12
-    },
-    "propertyValues" : { },
-    "reference" : "2397098e-ed9e-4fd4-94f8-d898ab8fe5f7",
-    "hasValidationError" : false,
-    "id" : "pbContainer",
-    "rows" : [ [ {
-      "type" : "component",
-      "dimension" : {
-        "xs" : 12
-      },
-      "propertyValues" : {
-        "labelHidden" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "hidden" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "level" : {
-          "type" : "constant",
-          "value" : "Level 1"
-        },
-        "cssClasses" : {
-          "type" : "constant",
-          "value" : ""
-        },
-        "widgetId" : {
-          "type" : "constant",
-          "value" : "pbTitle"
-        },
-        "readOnly" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "label" : {
-          "type" : "interpolation"
-        },
-        "text" : {
-          "type" : "interpolation",
-          "value" : "{{ task.displayName }}"
-        },
-        "alignment" : {
-          "type" : "constant",
-          "value" : "center"
-        },
-        "class" : {
-          "type" : "constant",
-          "value" : "org.bonitasoft.web.designer.experimental.parametrizedWidget.TitleWidget"
-        },
-        "dimension" : {
-          "type" : "constant",
-          "value" : 12
-        }
-      },
-      "reference" : "46c6fcb0-2198-4ce2-8820-69b7a738e05b",
-      "hasValidationError" : false,
-      "id" : "pbTitle"
-    } ], [ {
-      "type" : "component",
-      "dimension" : {
-        "xs" : 12
-      },
-      "propertyValues" : {
-        "labelHidden" : {
-          "type" : "constant",
-          "value" : true
-        },
-        "hidden" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "cssClasses" : {
-          "type" : "constant",
-          "value" : ""
-        },
-        "widgetId" : {
-          "type" : "constant",
-          "value" : "pbText"
-        },
-        "readOnly" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "label" : {
-          "type" : "interpolation"
-        },
-        "text" : {
-          "type" : "interpolation",
-          "value" : "{{ task.displayDescription }}"
-        },
-        "alignment" : {
-          "type" : "constant",
-          "value" : "left"
-        },
-        "class" : {
-          "type" : "constant",
-          "value" : "org.bonitasoft.web.designer.experimental.parametrizedWidget.TextWidget"
-        },
-        "dimension" : {
-          "type" : "constant",
-          "value" : 12
-        }
-      },
-      "reference" : "f48409ea-f523-4e3a-8d6e-02b8527217ce",
-      "hasValidationError" : false,
-      "id" : "pbText"
-    } ] ]
-  } ], [ {
     "type" : "formContainer",
     "dimension" : {
       "xs" : 12
     },
     "propertyValues" : { },
-    "reference" : "bf41aa30-f2d6-458d-8528-bf9a428e9326",
+    "reference" : "490764c5-0bb6-45ca-be9b-6995b313dde4",
     "hasValidationError" : false,
     "id" : "pbFormContainer",
     "container" : {
@@ -130,7 +18,7 @@
         "xs" : 12
       },
       "propertyValues" : { },
-      "reference" : "92b479b7-35be-4ae4-b054-fe832f085707",
+      "reference" : "88706481-4436-49d3-b023-60d6945eb9ac",
       "hasValidationError" : false,
       "id" : "pbContainer",
       "rows" : [ [ {
@@ -172,7 +60,7 @@
           },
           "alignment" : {
             "type" : "constant",
-            "value" : "center"
+            "value" : "left"
           },
           "class" : {
             "type" : "constant",
@@ -183,7 +71,7 @@
             "value" : 12
           }
         },
-        "reference" : "ab1cfd76-0a95-4152-b46e-9f4a30cf04bc",
+        "reference" : "a674d063-cc84-4b02-9658-25134c7569dd",
         "hasValidationError" : false,
         "id" : "pbTitle"
       } ], [ {
@@ -230,7 +118,7 @@
             "value" : 12
           }
         },
-        "reference" : "54c7e2c0-a457-4c3e-aeae-dc2e379d87c0",
+        "reference" : "37cfa3db-226a-4483-8fdb-d4c2d41d3db8",
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [ [ {
@@ -296,7 +184,7 @@
             },
             "value" : {
               "type" : "variable",
-              "value" : "defineGroup.nom"
+              "value" : "formInput.defineGroupInput.nom"
             },
             "minLength" : {
               "type" : "constant",
@@ -304,7 +192,7 @@
             },
             "maxLength" : {
               "type" : "constant",
-              "value" : 30
+              "value" : 25
             },
             "min" : {
               "type" : "constant"
@@ -317,7 +205,7 @@
               "value" : 1
             }
           },
-          "reference" : "935dfe7c-58a1-4b20-b620-e7d191ac6200",
+          "reference" : "67fde3a1-6ece-492d-9c82-99a573ba7573",
           "hasValidationError" : false,
           "id" : "pbInput"
         } ], [ {
@@ -383,28 +271,10 @@
             },
             "value" : {
               "type" : "variable",
-              "value" : "defineGroup.description"
-            },
-            "minLength" : {
-              "type" : "constant",
-              "value" : ""
-            },
-            "maxLength" : {
-              "type" : "constant",
-              "value" : ""
-            },
-            "min" : {
-              "type" : "constant"
-            },
-            "max" : {
-              "type" : "constant"
-            },
-            "step" : {
-              "type" : "constant",
-              "value" : 1
+              "value" : "formInput.defineGroupInput.description"
             }
           },
-          "reference" : "1933cf26-7719-4536-8546-b047ab2aa315",
+          "reference" : "d5b3fcd7-7acf-4255-aade-b938ae044f8b",
           "hasValidationError" : false,
           "id" : "pbInput"
         } ], [ {
@@ -451,14 +321,10 @@
             },
             "value" : {
               "type" : "variable",
-              "value" : "defineGroup.read_only"
-            },
-            "required" : {
-              "type" : "constant",
-              "value" : true
+              "value" : "formInput.defineGroupInput.read_only"
             }
           },
-          "reference" : "3ef0b400-2921-41e3-9ecb-ddceec2e217e",
+          "reference" : "a0f511ea-33d3-42ca-896f-78e3f52cd5e4",
           "hasValidationError" : false,
           "id" : "pbCheckbox"
         } ], [ {
@@ -505,14 +371,10 @@
             },
             "value" : {
               "type" : "variable",
-              "value" : "defineGroup.admin"
-            },
-            "required" : {
-              "type" : "constant",
-              "value" : false
+              "value" : "formInput.defineGroupInput.admin"
             }
           },
-          "reference" : "eaec028e-0c74-48fa-994a-f2c4cea98f17",
+          "reference" : "c5e8e98b-613f-4772-a675-bf959f377712",
           "hasValidationError" : false,
           "id" : "pbCheckbox"
         } ] ]
@@ -570,7 +432,7 @@
           },
           "action" : {
             "type" : "constant",
-            "value" : "Submit task"
+            "value" : "Start process"
           },
           "collectionToModify" : {
             "type" : "variable"
@@ -595,7 +457,7 @@
             "value" : 12
           }
         },
-        "reference" : "1abe05a4-3db9-48e3-b3e0-87d11fb57e53",
+        "reference" : "e86e5d3e-0db0-4888-be35-d3fa1cb58821",
         "hasValidationError" : false,
         "id" : "pbButton"
       } ], [ {
@@ -648,14 +510,14 @@
             "value" : 12
           }
         },
-        "reference" : "1429cf91-a144-4508-88a6-2f418aa75d43",
+        "reference" : "1176fd78-8eaa-4951-b152-f5f2074439b4",
         "hasValidationError" : false,
         "id" : "pbText"
       } ] ]
     }
   } ] ],
   "assets" : [ {
-    "id" : "2e3603a6-7395-4085-b7d6-b2d056087f91",
+    "id" : "5be2c910-dfd5-46b9-a0b4-b45cf080dee9",
     "name" : "style.css",
     "type" : "css",
     "order" : 0,
@@ -663,14 +525,9 @@
   } ],
   "inactiveAssets" : [ ],
   "data" : {
-    "defineGroup" : {
-      "type" : "url",
-      "value" : "../{{context.defineGroup_ref.link}}",
-      "exposed" : false
-    },
-    "task" : {
-      "type" : "url",
-      "value" : "../API/bpm/userTask/{{taskId}}",
+    "formInput" : {
+      "type" : "json",
+      "value" : "{\r\n  \"defineGroupInput\" : {\r\n    \"nom\" : \"\",\r\n    \"description\" : \"\",\r\n    \"read_only\" : false,\r\n    \"admin\" : false\r\n  }\r\n}",
       "exposed" : false
     },
     "submit_errors_list" : {
@@ -680,22 +537,12 @@
     },
     "formOutput" : {
       "type" : "expression",
-      "value" : "if( $data.defineGroup ){\n\treturn {\n\t\t//map defineGroup variable to expected task contract input\n\t\tdefineGroupInput: {\n\t\t\tnom: $data.defineGroup.nom !== undefined ? $data.defineGroup.nom : null,\n\t\t\tdescription: $data.defineGroup.description !== undefined ? $data.defineGroup.description : null,\n\t\t\tread_only: $data.defineGroup.read_only !== undefined ? $data.defineGroup.read_only : null,\n\t\t\tadmin: $data.defineGroup.admin !== undefined ? $data.defineGroup.admin : null\n\t\t}\n\t}\n}",
-      "exposed" : false
-    },
-    "context" : {
-      "type" : "url",
-      "value" : "../API/bpm/userTask/{{taskId}}/context",
-      "exposed" : false
-    },
-    "taskId" : {
-      "type" : "urlparameter",
-      "value" : "id",
+      "value" : "return {\n\tdefineGroupInput: $data.formInput.defineGroupInput\n}",
       "exposed" : false
     }
   },
   "hasValidationError" : false,
-  "uuid" : "e361d272-eac1-430b-8657-b6e5f828eaa8",
+  "uuid" : "163c6452-2a16-4f4b-86c8-10d948c49b2d",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer"
 }

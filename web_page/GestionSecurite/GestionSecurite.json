@@ -2,7 +2,7 @@
   "designerVersion" : "1.9.61",
   "id" : "GestionSecurite",
   "name" : "GestionSecurite",
-  "lastUpdate" : 1574335414454,
+  "lastUpdate" : 1574354586610,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -74,10 +74,12 @@
           "value" : [ "Name", "pwd", "Description" ]
         },
         "content" : {
-          "type" : "constant"
+          "type" : "expression",
+          "value" : "DefineUser"
         },
         "columnsKey" : {
-          "type" : "constant"
+          "type" : "constant",
+          "value" : [ "nom", "passWord", "description" ]
         },
         "selectedRow" : {
           "type" : "variable",
@@ -110,8 +112,8 @@
           "value" : "URL"
         },
         "targetUrl" : {
-          "type" : "constant",
-          "value" : "http://"
+          "type" : "expression",
+          "value" : "\"www.google.fr\""
         },
         "pageToken" : {
           "type" : "constant"
@@ -144,7 +146,7 @@
         },
         "buttonStyle" : {
           "type" : "constant",
-          "value" : "link"
+          "value" : "primary"
         }
       },
       "reference" : "77765427-9e42-4096-bd99-607e38eae7ff",
@@ -192,10 +194,12 @@
           "value" : [ "Nom", "Description", "Admin", "Read_only" ]
         },
         "content" : {
-          "type" : "constant"
+          "type" : "expression",
+          "value" : "GroupUser"
         },
         "columnsKey" : {
-          "type" : "constant"
+          "type" : "expression",
+          "value" : "GroupUser.nom, description, admin read_only"
         },
         "selectedRow" : {
           "type" : "variable",
@@ -228,8 +232,8 @@
           "value" : "URL"
         },
         "targetUrl" : {
-          "type" : "constant",
-          "value" : "http://"
+          "type" : "expression",
+          "value" : "\"/bonita/portal/resource/process/SecutryConfig/1.0/content/?id=\"+processDef[0].id"
         },
         "pageToken" : {
           "type" : "constant"
@@ -262,7 +266,7 @@
         },
         "buttonStyle" : {
           "type" : "constant",
-          "value" : "link"
+          "value" : "primary"
         }
       },
       "reference" : "0f10b8df-4f8a-485a-a663-e7d478beed29",
@@ -278,7 +282,23 @@
     "external" : false
   } ],
   "inactiveAssets" : [ ],
-  "data" : { },
+  "data" : {
+    "GroupUser" : {
+      "type" : "url",
+      "value" : "../API/bdm/businessData/com.company.model.GroupUser/2",
+      "exposed" : false
+    },
+    "DefineUser" : {
+      "type" : "url",
+      "value" : "../API/bdm/businessData/com.company.model.DefineUser/2",
+      "exposed" : false
+    },
+    "processDef" : {
+      "type" : "url",
+      "value" : "../API/bpm/process?p=0&c=1&f=name=SecurityConfig",
+      "exposed" : false
+    }
+  },
   "hasValidationError" : false,
   "uuid" : "a6f6775e-2e95-4232-88b0-1fa8e86c4e5a",
   "type" : "page",
