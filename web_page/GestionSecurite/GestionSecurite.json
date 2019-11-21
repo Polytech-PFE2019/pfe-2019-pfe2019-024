@@ -1,0 +1,286 @@
+{
+  "designerVersion" : "1.9.61",
+  "id" : "GestionSecurite",
+  "name" : "GestionSecurite",
+  "lastUpdate" : 1574335414454,
+  "rows" : [ [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "Gestion Sécurité"
+      },
+      "level" : {
+        "type" : "constant",
+        "value" : "Level 1"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "center"
+      }
+    },
+    "reference" : "4e83f92b-9e9d-49cf-8ad5-33366df5935e",
+    "hasValidationError" : false,
+    "id" : "pbTitle"
+  } ], [ {
+    "type" : "container",
+    "dimension" : {
+      "xs" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "repeatedCollection" : {
+        "type" : "variable",
+        "value" : ""
+      }
+    },
+    "reference" : "952fda1d-8e4a-4ae9-9f0b-3f5bcddb2e12",
+    "hasValidationError" : false,
+    "id" : "pbContainer",
+    "rows" : [ [ {
+      "type" : "component",
+      "dimension" : {
+        "xs" : 12
+      },
+      "propertyValues" : {
+        "cssClasses" : {
+          "type" : "constant",
+          "value" : ""
+        },
+        "hidden" : {
+          "type" : "constant",
+          "value" : false
+        },
+        "headers" : {
+          "type" : "constant",
+          "value" : [ "Name", "pwd", "Description" ]
+        },
+        "content" : {
+          "type" : "constant"
+        },
+        "columnsKey" : {
+          "type" : "constant"
+        },
+        "selectedRow" : {
+          "type" : "variable",
+          "value" : ""
+        }
+      },
+      "reference" : "c277b402-59c9-4a77-8840-c4d0e0a2ec46",
+      "hasValidationError" : false,
+      "id" : "pbTable"
+    } ], [ {
+      "type" : "component",
+      "dimension" : {
+        "xs" : 12
+      },
+      "propertyValues" : {
+        "cssClasses" : {
+          "type" : "constant",
+          "value" : ""
+        },
+        "hidden" : {
+          "type" : "constant",
+          "value" : false
+        },
+        "text" : {
+          "type" : "interpolation",
+          "value" : "Créer un nouvel utilisateur"
+        },
+        "type" : {
+          "type" : "constant",
+          "value" : "URL"
+        },
+        "targetUrl" : {
+          "type" : "constant",
+          "value" : "http://"
+        },
+        "pageToken" : {
+          "type" : "constant"
+        },
+        "processName" : {
+          "type" : "constant"
+        },
+        "processVersion" : {
+          "type" : "constant"
+        },
+        "taskId" : {
+          "type" : "constant"
+        },
+        "caseId" : {
+          "type" : "constant"
+        },
+        "target" : {
+          "type" : "constant",
+          "value" : "_self"
+        },
+        "appToken" : {
+          "type" : "constant"
+        },
+        "urlParams" : {
+          "type" : "constant"
+        },
+        "alignment" : {
+          "type" : "constant",
+          "value" : "left"
+        },
+        "buttonStyle" : {
+          "type" : "constant",
+          "value" : "link"
+        }
+      },
+      "reference" : "77765427-9e42-4096-bd99-607e38eae7ff",
+      "hasValidationError" : false,
+      "id" : "pbLink"
+    } ] ]
+  } ], [ {
+    "type" : "container",
+    "dimension" : {
+      "xs" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "repeatedCollection" : {
+        "type" : "variable",
+        "value" : ""
+      }
+    },
+    "reference" : "be3153fe-e8ed-49cb-a7e9-caa74c8d603f",
+    "hasValidationError" : false,
+    "id" : "pbContainer",
+    "rows" : [ [ {
+      "type" : "component",
+      "dimension" : {
+        "xs" : 12
+      },
+      "propertyValues" : {
+        "cssClasses" : {
+          "type" : "constant",
+          "value" : ""
+        },
+        "hidden" : {
+          "type" : "constant",
+          "value" : false
+        },
+        "headers" : {
+          "type" : "constant",
+          "value" : [ "Nom", "Description", "Admin", "Read_only" ]
+        },
+        "content" : {
+          "type" : "constant"
+        },
+        "columnsKey" : {
+          "type" : "constant"
+        },
+        "selectedRow" : {
+          "type" : "variable",
+          "value" : ""
+        }
+      },
+      "reference" : "bf0ee6d7-0413-4c76-bdc9-6d0ea525d403",
+      "hasValidationError" : false,
+      "id" : "pbTable"
+    } ], [ {
+      "type" : "component",
+      "dimension" : {
+        "xs" : 12
+      },
+      "propertyValues" : {
+        "cssClasses" : {
+          "type" : "constant",
+          "value" : ""
+        },
+        "hidden" : {
+          "type" : "constant",
+          "value" : false
+        },
+        "text" : {
+          "type" : "interpolation",
+          "value" : "Créer un nouveau groupe d'utilisateur"
+        },
+        "type" : {
+          "type" : "constant",
+          "value" : "URL"
+        },
+        "targetUrl" : {
+          "type" : "constant",
+          "value" : "http://"
+        },
+        "pageToken" : {
+          "type" : "constant"
+        },
+        "processName" : {
+          "type" : "constant"
+        },
+        "processVersion" : {
+          "type" : "constant"
+        },
+        "taskId" : {
+          "type" : "constant"
+        },
+        "caseId" : {
+          "type" : "constant"
+        },
+        "target" : {
+          "type" : "constant",
+          "value" : "_self"
+        },
+        "appToken" : {
+          "type" : "constant"
+        },
+        "urlParams" : {
+          "type" : "constant"
+        },
+        "alignment" : {
+          "type" : "constant",
+          "value" : "left"
+        },
+        "buttonStyle" : {
+          "type" : "constant",
+          "value" : "link"
+        }
+      },
+      "reference" : "0f10b8df-4f8a-485a-a663-e7d478beed29",
+      "hasValidationError" : false,
+      "id" : "pbLink"
+    } ] ]
+  } ] ],
+  "assets" : [ {
+    "id" : "e62c65b4-68c6-4853-96a7-75b0022476f2",
+    "name" : "style.css",
+    "type" : "css",
+    "order" : 0,
+    "external" : false
+  } ],
+  "inactiveAssets" : [ ],
+  "data" : { },
+  "hasValidationError" : false,
+  "uuid" : "a6f6775e-2e95-4232-88b0-1fa8e86c4e5a",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer"
+}
