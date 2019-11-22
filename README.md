@@ -22,8 +22,6 @@ Download Bonita Studio 7.9.3 or later.
 
 Michel Marmone Marini – michelmarmonemarini@gmail.com
 
-Licensed under GNU General Public License v2. See [LICENSE](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) for more information.
-
 [https://github.com/MMarmone/PFEBonita](https://github.com/MMarmone/PFEBonita)
 
 
