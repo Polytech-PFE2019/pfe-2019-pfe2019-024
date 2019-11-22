@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1" name="DORIANE" description="Entreprise Doriane">
+  <customUserInfoDefinitions/>
+  <users>
+    <user userName="user1">
+      <firstName>Michel</firstName>
+      <lastName>Dupont</lastName>
+      <title>Mr</title>
+      <jobTitle>Consultant</jobTitle>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="admin1">
+      <firstName>admin</firstName>
+      <lastName>nom</lastName>
+      <title>mr</title>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="Utilisateur1">
+      <firstName>utilisateur1</firstName>
+      <lastName>nom</lastName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="Utilisateur2">
+      <firstName>utilisateur2</firstName>
+      <lastName>nom2</lastName>
+      <title>Mme</title>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+  </users>
+  <roles>
+    <role name="Consultant">
+      <displayName>Consultant</displayName>
+    </role>
+    <role name="Admin">
+      <displayName>Admin</displayName>
+    </role>
+    <role name="User">
+      <displayName>User</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="DORIANE">
+      <displayName>Doriane</displayName>
+    </group>
+    <group name="Consultant" parentPath="/DORIANE">
+      <displayName>Consultant</displayName>
+    </group>
+    <group name="Client" parentPath="/DORIANE">
+      <displayName>Client</displayName>
+    </group>
+    <group name="Logiciel" parentPath="/DORIANE">
+      <displayName>Logiciel</displayName>
+    </group>
+    <group name="RnDExperience" parentPath="/DORIANE/Logiciel">
+      <displayName>RnDExperience</displayName>
+    </group>
+    <group name="RnDManager" parentPath="/DORIANE/Logiciel">
+      <displayName>RnDManager</displayName>
+    </group>
+    <group name="Admin" parentPath="/DORIANE/Client">
+      <displayName>Admin</displayName>
+    </group>
+    <group name="User" parentPath="/DORIANE/Client">
+      <displayName>User</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>user1</userName>
+      <roleName>Consultant</roleName>
+      <groupName>Consultant</groupName>
+      <groupParentPath>/DORIANE</groupParentPath>
+    </membership>
+    <membership>
+      <userName>admin1</userName>
+      <roleName>Admin</roleName>
+      <groupName>Admin</groupName>
+      <groupParentPath>/DORIANE/Client</groupParentPath>
+    </membership>
+    <membership>
+      <userName>Utilisateur1</userName>
+      <roleName>User</roleName>
+      <groupName>User</groupName>
+      <groupParentPath>/DORIANE/Client</groupParentPath>
+    </membership>
+    <membership>
+      <userName>Utilisateur2</userName>
+      <roleName>User</roleName>
+      <groupName>User</groupName>
+      <groupParentPath>/DORIANE/Client</groupParentPath>
+    </membership>
+  </memberships>
+</organization:Organization>

@@ -2,7 +2,7 @@
   "designerVersion" : "1.9.61",
   "id" : "GestionSecurite",
   "name" : "GestionSecurite",
-  "lastUpdate" : 1574354586610,
+  "lastUpdate" : 1574415393783,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -198,8 +198,8 @@
           "value" : "GroupUser"
         },
         "columnsKey" : {
-          "type" : "expression",
-          "value" : "GroupUser.nom, description, admin read_only"
+          "type" : "constant",
+          "value" : [ "nom", "description", "admin", "read_only" ]
         },
         "selectedRow" : {
           "type" : "variable",
@@ -285,7 +285,7 @@
   "data" : {
     "GroupUser" : {
       "type" : "url",
-      "value" : "../API/bdm/businessData/com.company.model.GroupUser/2",
+      "value" : "../API/bdm/businessData/com.company.model.GroupUser?q=find&p=0&c=100",
       "exposed" : false
     },
     "DefineUser" : {
