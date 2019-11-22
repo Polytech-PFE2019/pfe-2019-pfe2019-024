@@ -1,5 +1,3 @@
-# PFEBonita
-
 # PFE2019#024 - Configuration de logiciels complexes : Audit
 
 > The goal of this project is to propose a approche for the configuration of a complex software.
