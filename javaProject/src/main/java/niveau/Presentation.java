@@ -10,7 +10,7 @@ public class Presentation {
 
 
     private String nom;
-    private ArrayList<Variable> variables;
+    private ArrayList < Variable > variables;
 
     public Presentation(String nom) {
         this.nom = nom;

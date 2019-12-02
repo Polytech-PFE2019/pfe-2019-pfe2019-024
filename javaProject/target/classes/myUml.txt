@@ -1,0 +1,53 @@
+@startuml 
+package "niveau { 
+Class Niveau
+Class NiveauCovariable
+Class Presentation
+} 
+ package "observationMultiple" { 
+Class InformationObservationMultiple
+Class TypeObservationMultiple
+} 
+ package "others" { 
+Class ProfilDiagnostic
+} 
+ package "profilDeCroisement" { 
+Class ProfilDeCroisement
+Class ProfilMatriceDeCroisement
+} 
+ package "securite" { 
+Class GroupeUtilisateur
+Class Utilisateur
+} 
+ package "structure" { 
+Class Experimentation
+} 
+ package "factory" { 
+Class StructureFactory
+} 
+ package "structure" { 
+Class Link
+Class Phyto
+Class Planning
+Class Selection
+Class Stock
+Class Structure
+Class StructureExperiment
+Class StructureExperimentCross
+} 
+ package "variable" { 
+Class ChoixLimite
+Class ColonnesDeStructureLiee
+Class ColonneUtilisateur
+Class ColonneUtilisateurDeLien
+Class Compteur
+Class ConditionsExperimentale
+} 
+ package "factory" { 
+Class VariableFactory
+Class VariableFactoryColonnesUtilisateur
+} 
+ package "variable" { 
+Class TypeDeCroisement
+Class Variable
+@enduml

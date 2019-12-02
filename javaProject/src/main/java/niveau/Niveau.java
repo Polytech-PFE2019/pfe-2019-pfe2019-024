@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class Niveau {
 
-    private ArrayList<Presentation> presentations;
-    private ArrayList<Variable> variables;
+    private ArrayList < Presentation > presentations;
+    private ArrayList < Variable > variables;
 
     private int id;
 

@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public abstract class Structure {
 
-    private Utilisateur[] utilisateurs;
-    private ArrayList<Niveau> niveaux;
+    private Utilisateur [] utilisateurs;
+    private ArrayList < Niveau > niveaux;
     private TypeObservationMultiple typeObservationMultiple;
     private InformationObservationMultiple InformationObservationMultiple;
     private String nom;
