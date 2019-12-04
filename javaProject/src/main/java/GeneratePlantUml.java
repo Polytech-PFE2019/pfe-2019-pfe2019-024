@@ -48,24 +48,33 @@ public class GeneratePlantUml {
         String tmp = "";
         String packagePath = "";
         String packageName = "";
+        String parentPackagePath = "";
 
         for(int i = 0 ; i < filePath.size(); i++) {
             packagePath = filePath.get(i).substring(0,filePath.get(i).lastIndexOf("\\"));
             if(packagePath.substring(packagePath.lastIndexOf("\\")+1).equals("java") ||
-                    packagePath.substring(packagePath.lastIndexOf("\\")+1).equals("businessLevel")){
+                    packagePath.substring(packagePath.lastIndexOf("\\")+1).equals("businessLevel") ||
+                    packagePath.substring(packagePath.lastIndexOf("\\")+1).equals("factory")){
                 filePath.remove(i);
                 i--;
             }
         }
+
         packagePath = filePath.get(0).substring(0,filePath.get(0).lastIndexOf("\\"));
-        packageName =packagePath.substring(packagePath.lastIndexOf("\\")+1);
+        packageName = packagePath.substring(packagePath.lastIndexOf("\\")+1);
         writer.append("\n package \""+packageName+"\" #DDDDDD{ \n");
+
         for(int i = 0; i< filePath.size();i++){
 
             packagePath = filePath.get(i).substring(0,filePath.get(i).lastIndexOf("\\"));
+            parentPackagePath = packagePath.substring(0,packagePath.lastIndexOf("\\"));
 
             if(!packageName.equals(packagePath.substring(packagePath.lastIndexOf("\\")+1)))
             {
+                /*if(!parentPackagePath.substring(parentPackagePath.lastIndexOf("\\")+1).equals("java")){
+                    writer.append("}\n package \""+parentPackagePath.substring(parentPackagePath.lastIndexOf("\\")+1)+"\" #DDDDDD { \n");
+                    writer.append("\n package \""+packagePath.substring(packagePath.lastIndexOf("\\")+1)+"\" #DDDDDD { }\n");
+                }*/
                 packageName =packagePath.substring(packagePath.lastIndexOf("\\")+1);
                 writer.append("}\n package \""+packageName+"\" #DDDDDD { \n");
             }
@@ -106,11 +115,18 @@ public class GeneratePlantUml {
         if(line.contains("extends")){
             writer.append(fileName + " <|-- " + reference +" : extends  " + "\n");
         }else {
+            String[] tmp ;
+            tmp = line.split(" ");
             writer.append(fileName+ " --> " );
             if(line.contains(reference+" []") || line.contains("ArrayList < " +reference+ " >")){
                 writer.append("\"0..*\"");
             }
-            writer.append(reference + "\n");
+            writer.append(reference+"");
+            if(tmp[4].equals("private") ){
+                writer.append(" : " + tmp[tmp.length-2] +"\n");
+            }else{
+                writer.append("\n");
+            }
         }
     }
 

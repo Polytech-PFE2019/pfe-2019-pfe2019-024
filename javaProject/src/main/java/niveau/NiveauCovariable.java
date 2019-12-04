@@ -1,6 +1,6 @@
 package niveau;
 
-public class NiveauCovariable extends Niveau {
+public class NiveauCovariable extends NiveauExp {
 
     public NiveauCovariable(int id){
         super(id);

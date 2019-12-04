@@ -1,13 +1,20 @@
 package niveau;
 
+import niveau.tools.*;
 import variable.Variable;
 
 import java.util.ArrayList;
 
 public class Niveau {
 
-    private ArrayList < Presentation > presentations;
-    private ArrayList < Variable > variables;
+    private ArrayList < Presentation > presentations ;
+    private ArrayList < Variable > variables ;
+    private ArrayList < Etiquette > etiquettes ;
+    private ArrayList < Formulaire > formulaires ;
+    private ArrayList < Interface > interfaces ;
+    private ArrayList < InterfaceMatricielle > interfaceMatricielles ;
+    private ArrayList < PresentationMatricielle > presentationMatricielles ;
+    private ArrayList < Rapports > rapports ;
 
     private int id;
 
