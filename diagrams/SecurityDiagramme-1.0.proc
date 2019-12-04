@@ -87,7 +87,7 @@
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_5Zd0AAxwEeq2NMDzVSCycg" target="_5Y-EwAxwEeq2NMDzVSCycg" source="_mdgb8AxSEeqaIpms5636ZA">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_5Zd0AQxwEeq2NMDzVSCycg"/>
-        <condition xmi:type="expression:Expression" xmi:id="_5ZebEAxwEeq2NMDzVSCycg" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_5ZebEAxwEeq2NMDzVSCycg" name="" content="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_grAgwAxxEeq2NMDzVSCycg" target="_gq5zEAxxEeq2NMDzVSCycg" source="_5Y-EwAxwEeq2NMDzVSCycg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_grAgwQxxEeq2NMDzVSCycg"/>

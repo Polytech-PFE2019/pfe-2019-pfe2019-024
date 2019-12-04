@@ -55,6 +55,17 @@ public class Niveau {
         this.id = id;
     }
 
-
+    @Override
+    public String toString(){
+        String res = "Variables : [ ";
+        for(int i = 0 ; i< variables.size();i++){
+            res = res + "[ "+variables.get(i)+"], ";
+        }
+        res = res + "], \nPresentation : ";
+        for(int i = 0 ; i< presentations.size();i++){
+            res = res + "nom : "+presentations.get(i).getNom()+" " +presentations.get(i)+", ";
+        }
+        return res;
+    }
 
 }

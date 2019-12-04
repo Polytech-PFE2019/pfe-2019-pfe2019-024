@@ -35,4 +35,13 @@ public class Presentation {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
+    @Override
+    public String toString() {
+        String res = "Variables : [ ";
+        for (int i = 0; i < variables.size(); i++) {
+            res = res + variables.get(i) + ", ";
+        }
+        return res +" ]";
+    }
 }

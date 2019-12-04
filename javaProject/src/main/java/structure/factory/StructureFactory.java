@@ -5,7 +5,7 @@ import structure.*;
 public class StructureFactory {
 
 
-    public Structure getStructure(String nom,int nbNiveau,String structType) {
+    public Structure createStructure(String nom,int nbNiveau,String structType) {
         Structure structure = null;
 
         switch (structType) {

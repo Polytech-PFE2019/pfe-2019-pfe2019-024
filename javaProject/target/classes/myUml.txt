@@ -1,31 +1,36 @@
 @startuml 
-package "niveau { 
+
+ package "materiel" #DDDDDD{ 
+Class Produit
+Class Semence
+}
+ package "niveau" #DDDDDD { 
 Class Niveau
 Class NiveauCovariable
 Class Presentation
-} 
- package "observationMultiple" { 
+}
+ package "observationMultiple" #DDDDDD { 
 Class InformationObservationMultiple
 Class TypeObservationMultiple
-} 
- package "others" { 
+}
+ package "others" #DDDDDD { 
 Class ProfilDiagnostic
-} 
- package "profilDeCroisement" { 
+}
+ package "profilDeCroisement" #DDDDDD { 
 Class ProfilDeCroisement
 Class ProfilMatriceDeCroisement
-} 
- package "securite" { 
+}
+ package "securite" #DDDDDD { 
 Class GroupeUtilisateur
 Class Utilisateur
-} 
- package "structure" { 
+}
+ package "structure" #DDDDDD { 
 Class Experimentation
-} 
- package "factory" { 
+}
+ package "factory" #DDDDDD { 
 Class StructureFactory
-} 
- package "structure" { 
+}
+ package "structure" #DDDDDD { 
 Class Link
 Class Phyto
 Class Planning
@@ -34,20 +39,52 @@ Class Stock
 Class Structure
 Class StructureExperiment
 Class StructureExperimentCross
-} 
- package "variable" { 
+}
+ package "variable" #DDDDDD { 
 Class ChoixLimite
 Class ColonnesDeStructureLiee
 Class ColonneUtilisateur
 Class ColonneUtilisateurDeLien
 Class Compteur
 Class ConditionsExperimentale
-} 
- package "factory" { 
+}
+ package "factory" #DDDDDD { 
 Class VariableFactory
 Class VariableFactoryColonnesUtilisateur
-} 
- package "variable" { 
+}
+ package "variable" #DDDDDD { 
 Class TypeDeCroisement
 Class Variable
+}
+Niveau --> "0..*"Presentation
+Niveau --> "0..*"Variable
+NiveauCovariable <|-- Niveau : extends  
+Presentation --> "0..*"Variable
+GroupeUtilisateur --> "0..*"Utilisateur
+Utilisateur --> GroupeUtilisateur
+Experimentation <|-- StructureExperimentCross : extends  
+StructureFactory --> Structure
+Phyto <|-- StructureExperiment : extends  
+Planning <|-- StructureExperiment : extends  
+Selection <|-- StructureExperimentCross : extends  
+Stock <|-- Structure : extends  
+Structure --> "0..*"Utilisateur
+Structure --> "0..*"Niveau
+Structure --> TypeObservationMultiple
+Structure --> InformationObservationMultiple
+StructureExperiment <|-- Structure : extends  
+StructureExperiment --> "0..*"NiveauCovariable
+StructureExperiment --> "0..*"ProfilDiagnostic
+StructureExperimentCross <|-- StructureExperiment : extends  
+StructureExperimentCross --> "0..*"ProfilDeCroisement
+StructureExperimentCross --> "0..*"ProfilMatriceDeCroisement
+ColonnesDeStructureLiee <|-- Variable : extends  
+ColonneUtilisateur <|-- Variable : extends  
+ColonneUtilisateurDeLien <|-- Variable : extends  
+Compteur <|-- Variable : extends  
+ConditionsExperimentale <|-- Variable : extends  
+VariableFactory --> Variable
+VariableFactoryColonnesUtilisateur <|-- VariableFactory : extends  
+VariableFactoryColonnesUtilisateur --> ColonneUtilisateur
+TypeDeCroisement <|-- Variable : extends  
 @enduml

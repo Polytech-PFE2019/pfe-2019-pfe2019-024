@@ -1,31 +1,36 @@
 @startuml 
-package "niveau { 
+
+ package "materiel" #DDDDDD{ 
+Class Produit
+Class Semence
+}
+ package "niveau" #DDDDDD { 
 Class Niveau
 Class NiveauCovariable
 Class Presentation
-} 
- package "observationMultiple" { 
+}
+ package "observationMultiple" #DDDDDD { 
 Class InformationObservationMultiple
 Class TypeObservationMultiple
-} 
- package "others" { 
+}
+ package "others" #DDDDDD { 
 Class ProfilDiagnostic
-} 
- package "profilDeCroisement" { 
+}
+ package "profilDeCroisement" #DDDDDD { 
 Class ProfilDeCroisement
 Class ProfilMatriceDeCroisement
-} 
- package "securite" { 
+}
+ package "securite" #DDDDDD { 
 Class GroupeUtilisateur
 Class Utilisateur
-} 
- package "structure" { 
+}
+ package "structure" #DDDDDD { 
 Class Experimentation
-} 
- package "factory" { 
+}
+ package "factory" #DDDDDD { 
 Class StructureFactory
-} 
- package "structure" { 
+}
+ package "structure" #DDDDDD { 
 Class Link
 Class Phyto
 Class Planning
@@ -34,22 +39,23 @@ Class Stock
 Class Structure
 Class StructureExperiment
 Class StructureExperimentCross
-} 
- package "variable" { 
+}
+ package "variable" #DDDDDD { 
 Class ChoixLimite
 Class ColonnesDeStructureLiee
 Class ColonneUtilisateur
 Class ColonneUtilisateurDeLien
 Class Compteur
 Class ConditionsExperimentale
-} 
- package "factory" { 
+}
+ package "factory" #DDDDDD { 
 Class VariableFactory
 Class VariableFactoryColonnesUtilisateur
-} 
- package "variable" { 
+}
+ package "variable" #DDDDDD { 
 Class TypeDeCroisement
 Class Variable
+}
 Niveau --> "0..*"Presentation
 Niveau --> "0..*"Variable
 NiveauCovariable <|-- Niveau : extends  

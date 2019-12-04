@@ -351,7 +351,6 @@
           <stepSummary xmi:type="expression:Expression" xmi:id="_24wN4w-pEeqcx80Rb5xdNw" name="" content="" returnTypeFixed="true"/>
         </elements>
       </elements>
-      <elements xmi:type="process:Lane" xmi:id="_yWpt8A-kEeqcx80Rb5xdNw" name="Lane2"/>
       <formMapping xmi:type="process:FormMapping" xmi:id="_pKYyxA-kEeqcx80Rb5xdNw">
         <targetForm xmi:type="expression:Expression" xmi:id="_pKYyxQ-kEeqcx80Rb5xdNw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
@@ -392,7 +391,7 @@
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_aAo6fA-mEeqcx80Rb5xdNw" target="_hvYu0A-mEeqcx80Rb5xdNw" source="_tUJA4A-lEeqcx80Rb5xdNw">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_aAo6fQ-mEeqcx80Rb5xdNw"/>
-        <condition xmi:type="expression:Expression" xmi:id="_aAo6fg-mEeqcx80Rb5xdNw" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_aAo6fg-mEeqcx80Rb5xdNw" name="" content="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_krmBQA-mEeqcx80Rb5xdNw" target="_1kKWUA-lEeqcx80Rb5xdNw" source="_hvYu0A-mEeqcx80Rb5xdNw">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_krmBQQ-mEeqcx80Rb5xdNw"/>
@@ -686,15 +685,6 @@
           <styles xmi:type="notation:LineStyle" xmi:id="_wzSdww-kEeqcx80Rb5xdNw"/>
           <styles xmi:type="notation:FillStyle" xmi:id="_wzSdxw-kEeqcx80Rb5xdNw"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wzSdxA-kEeqcx80Rb5xdNw" x="48" y="344" width="2201" height="361"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_yWpt8Q-kEeqcx80Rb5xdNw" type="3007" element="_yWpt8A-kEeqcx80Rb5xdNw">
-          <children xmi:type="notation:DecorationNode" xmi:id="_yWpt9g-kEeqcx80Rb5xdNw" type="5007"/>
-          <children xmi:type="notation:DecorationNode" xmi:id="_yWpt9w-kEeqcx80Rb5xdNw" type="7002"/>
-          <styles xmi:type="notation:DescriptionStyle" xmi:id="_yWpt8g-kEeqcx80Rb5xdNw"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_yWpt8w-kEeqcx80Rb5xdNw" fontName="Segoe UI"/>
-          <styles xmi:type="notation:LineStyle" xmi:id="_yWpt9A-kEeqcx80Rb5xdNw"/>
-          <styles xmi:type="notation:FillStyle" xmi:id="_yWpt-A-kEeqcx80Rb5xdNw"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yWpt9Q-kEeqcx80Rb5xdNw" x="174" y="378"/>
         </children>
       </children>
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_pKYy-A-kEeqcx80Rb5xdNw"/>
