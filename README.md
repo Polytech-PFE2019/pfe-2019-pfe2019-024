@@ -1,8 +1,8 @@
 # PFE2019#024 - Configuration de logiciels complexes : Audit
 
-> The goal of this project is to propose a approche for the configuration of a complex software.
+> Le but de ce projet est de proposer une approche pour la capture et la modélisation de la variabilité d'un logiciel complexe.
 
-This project is solution for capture the variability of the configuration of a complexe software using differents approach for modelise the job level.
+Ce projet est une solution pour capturer la variabilité des configurations d'un logiciel complexe, en utilisant differentes approche pour modéliser le niveau métier.
 
 
 ## Release History
@@ -12,7 +12,7 @@ This project is solution for capture the variability of the configuration of a c
 * 0.0.2
     * Modélisation métier et implementation
 * 0.0.1
-    * Start a bonita project
+    * Bonita project
 
 ## Meta
 
