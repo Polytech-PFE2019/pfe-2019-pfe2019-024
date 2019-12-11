@@ -1,0 +1,52 @@
+@startuml 
+
+ package "Experience" #DDDDDD{ 
+Class Experience
+Class Protocole
+}
+ package "Geographie" #DDDDDD { 
+Class UniteDeCulture
+}
+ package "Materiel" #DDDDDD { 
+Class Materiel
+Class Produit
+Class Semence
+}
+ package "niveau" #DDDDDD { 
+Class Colonne
+Class Niveau
+Class NiveauCovariable
+Class NiveauExp
+Class Presentation
+}
+ package "tools" #DDDDDD { 
+Class Etiquette
+Class Formulaire
+Class Interface
+Class InterfaceMatricielle
+Class PresentationMatricielle
+Class Rapports
+}
+ package "Stock" #DDDDDD { 
+Class Stock
+}
+Experience <|-- Protocole : extends  
+Experience --> "0..*"UniteDeCulture : uniteDeCultures
+Experience --> "0..*"Materiel : materiel
+Protocole --> Niveau : niveaux
+Produit <|-- Materiel : extends  
+Semence <|-- Materiel : extends  
+Niveau --> "0..*"Presentation : presentations
+Niveau --> "0..*"Colonne : colonnes
+Niveau --> "0..*"Etiquette : etiquettes
+Niveau --> "0..*"Formulaire : formulaires
+Niveau --> "0..*"Interface : interfaces
+Niveau --> "0..*"InterfaceMatricielle : interfaceMatricielles
+Niveau --> "0..*"PresentationMatricielle : presentationMatricielles
+Niveau --> "0..*"Rapports : rapports
+NiveauCovariable <|-- NiveauExp : extends  
+NiveauExp <|-- Niveau : extends  
+Presentation --> "0..*"Colonne : variables
+Stock --> Niveau : niveaux
+Stock --> Materiel : materiels
+@enduml

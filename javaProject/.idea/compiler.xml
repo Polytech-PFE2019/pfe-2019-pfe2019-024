@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="javaProject" />
+        <module name="Manager" />
+        <module name="excelCourse" />
+        <module name="RndExp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="10" />

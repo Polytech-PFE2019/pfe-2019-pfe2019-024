@@ -1,0 +1,40 @@
+@startuml
+(*) --> "generateStructure" as generateStructure
+if  "chooseStructure" then
+--> "Experience" as Experience
+--> "choose Experience" as chooseExperience
+else
+--> "Stock"
+--> (*)
+endif
+chooseExperience --> "Definir nom"
+--> "définir nombre de niveau"
+--> " définir référence niveau de stock"
+--> ===B1===
+===B1=== --> "Configuration niveau" as Configurationniveau
+--> ===B2===
+===B1=== --> "Configurer Niveau Covariable" as ConfigurerNiveauCovariable
+===B1=== --> "Configurer Observation Multiple" as ConfigurerObservationMultiple
+===B1=== -->  "Configurer Profil De Croisement" as ConfigurerProfilDeCroisement
+
+===B2===  -->  "ajout Variable Niveau" as ajoutVariableNiveau
+===B2=== -->   "creer Presentation" as creerPresentation
+===B2=== -->   "configure Formulaire" as configureFormulaire
+===B2=== -->   "configure Etiquette" as configureEtiquette
+===B2=== -->   "configure Interface" as configureInterface
+===B2=== -->  "configure Interface Matricielle" as configureInterfaceMatricielle
+===B2=== -->  "configure Presentation Matricielle" as configurePresentationMatricielle
+===B2=== -->  "configure Rapports" as configureRapports
+ajoutVariableNiveau --> (*)
+creerPresentation --> (*)
+configureFormulaire --> (*)
+configureEtiquette --> (*)
+configureInterface --> (*)
+configureInterfaceMatricielle --> (*)
+configurePresentationMatricielle --> (*)
+configureRapports --> (*)
+Configurationniveau --> (*)
+ConfigurerNiveauCovariable --> (*)
+ConfigurerObservationMultiple --> (*)
+ConfigurerProfilDeCroisement --> (*)
+@enduml
