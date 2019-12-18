@@ -40,11 +40,50 @@ public class GenerateDiffFile {
             cell.setCellValue(expName.get(i));
             for(int j = 0 ; j < tab.size();j++){
                 cell = row.createCell(j+1, CellType.STRING);
-                cell.setCellValue(tab.get(i).compareHeader(tab.get(j)));
+                if(i != j) {
+                    cell.setCellValue(tab.get(i).compareHeader(tab.get(j)).substring(tab.get(i).compareHeader(tab.get(j)).indexOf(".") + 1));
+                }else{
+                    cell.setCellValue("xxx");
+                }
                 cell.setCellStyle(cs);
             }
         }
+        for(int i = 0 ; i < tab.size()+1;i++){
+            sheet.autoSizeColumn(i);
+        }
+        FileOutputStream outFile = new FileOutputStream(file);
+        workbook.write(outFile);
+
+    }
+
+    public void generateHeaderSameNameFile(ArrayList<Tableau> tab, List<String> expName) throws IOException {
+        HSSFSheet sheet = workbook.createSheet("HeaderNameSameColone");
+
+
+        Cell cell;
+        Row row;
+        row = sheet.createRow(0);
         for(int i = 0 ; i < tab.size();i++){
+
+            cell = row.createCell(i+1, CellType.STRING);
+            cell.setCellValue(expName.get(i));
+
+        }
+        for(int i = 0 ; i < tab.size();i++) {
+            row = sheet.createRow(i+1);
+            cell = row.createCell(0, CellType.STRING);
+            cell.setCellValue(expName.get(i));
+            for(int j = 0 ; j < tab.size();j++){
+                cell = row.createCell(j+1, CellType.STRING);
+                if(i != j) {
+                    cell.setCellValue(tab.get(i).compareHeader(tab.get(j)).substring(0,tab.get(i).compareHeader(tab.get(j)).indexOf(".")));
+                }else{
+                    cell.setCellValue("xxx\nxxx\nxxx");
+                }
+                cell.setCellStyle(cs);
+            }
+        }
+        for(int i = 0 ; i < tab.size()+1;i++){
             sheet.autoSizeColumn(i);
         }
         FileOutputStream outFile = new FileOutputStream(file);

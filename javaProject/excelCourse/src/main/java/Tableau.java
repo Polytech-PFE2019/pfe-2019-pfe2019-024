@@ -145,13 +145,15 @@ public class Tableau
     public String compareHeader(Tableau tab){
         ArrayList<Object> header = new ArrayList<Object>(Arrays.asList(this.header));
         int diff = this.getHeader().length;
+        String res = "";
         for(int i = 0; i < tab.getHeader().length; i++){
             if(header.contains(tab.getHeader()[i])){
-
+                res = res +tab.getHeader()[i];
+                res += "\n";
                 diff--;
             }
         }
-        return "Col : "+this.getHeader().length+"\nDiff : "+diff + "\nEgale : "+ (this.getHeader().length - diff);
+        return res +"."+"Col : "+this.getHeader().length+"\nDiff : "+diff + "\nEq : "+ (this.getHeader().length - diff);
     }
 
 

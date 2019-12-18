@@ -20,16 +20,6 @@ public class Main {
         }
         //Ajout d'une variable dans un niveau d'une structure
 
-        // Activity
-
-        Structure cross = Scenario.scenarioCreerStructureSelection("Cross",3,null);
-        Scenario.scenarioConfigureNiveau(cross);
-        Scenario.scenarioConfigureNiveauCovariable(cross);
-        Scenario.scenarioConfigureObservationMultiple(cross);
-        Scenario.scenarioConfigureProfilDeCroisement(cross);
-
-        // End Activity
-
 
         Structure contact = Scenario.scenarioCreerStructureStockage("contact",2);
         Presentation general = Scenario.scenarioCreerPresentationEtAjouter(contact,1,"general");
@@ -49,8 +39,13 @@ public class Main {
         Scenario.scenarioSetupMaterielsSemenceDansStructure(genotype);
         System.out.println("Niveau 1 genotype : "+genotype.getNiveau(1).toString());
 
-
-        //Sceanrio par extrapolation : creer une structure upportant du materiel de semanece par défaut
+        //--- Création d'une experience
+        Structure cross = Scenario.scenarioCreerStructureSelection("cross",2,genotype.getNiveau(1));
+        Scenario.scenarioConfigurationNiveau(cross);
+        Scenario.scenarioConfigureNiveauCovariable(cross);
+        Scenario.scenarioConfigureProfilDeCroisement(cross);
+        Scenario.scenarioConfigureObservationMultiple(cross);
+        //Sceanrio par extrapolation : creer une structure important du materiel de semanece par défaut
         // il faudrait creer toutes les colonnes propres à l'application... et suggérer celles qui se trouvent dans READY
 
         ///- scenraio de creation d'une structure relative à des experimentations de croisement

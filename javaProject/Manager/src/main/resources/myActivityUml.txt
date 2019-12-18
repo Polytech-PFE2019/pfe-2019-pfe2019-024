@@ -1,9 +1,0 @@
-@startuml 
-(*) --> "generateStructure" as generateStructure 
-if  "chooseStructure" then 
---> "Experience" as Experience 
---> "chooseExperience" as chooseExperience 
-else 
---> "Stock" 
- endif 
-@enduml

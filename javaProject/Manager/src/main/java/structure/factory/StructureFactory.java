@@ -1,17 +1,19 @@
 package structure.factory;
 
+import niveau.Niveau;
 import structure.*;
 
 public class StructureFactory {
 
 
     public Structure createStructure(String nom,int nbNiveau,String structType) {
+        return  new Stock(nom,nbNiveau);
+    }
+
+    public Structure createStructure(String nom,int nbNiveau,String structType, Niveau reference) {
         Structure structure = null;
 
         switch (structType) {
-            case "Stock":
-                structure = new Stock(nom,nbNiveau);
-                break;
             case "Planning":
                 structure = new Experimentation(nom,nbNiveau);
                 break;

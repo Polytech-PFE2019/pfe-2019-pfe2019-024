@@ -25,7 +25,7 @@ public class Scenario {
         return struct;
     }
 
-    public static void scenarioConfigureNiveau(Structure structure){
+    public static void scenarioConfigurationNiveau(Structure structure){
         for(int i = 0; i < structure.getNiveaux().size();i++) {
             ajoutVariableNiveau(structure.getNiveau(i));
             creerPresentation(structure,i,"");
@@ -126,7 +126,7 @@ public class Scenario {
 
     private static Structure creerStructureSelection(String name, int nbLevel,Niveau reference) {
         // @doriane : ne faudrait-il pas dans tous les cas, créer une presentation par défaut?
-        return factoryStructure.createStructure(name, nbLevel, "Selection");
+        return factoryStructure.createStructure(name, nbLevel, "Selection",reference);
     }
 
     private static ArrayList getMaterielsSemencesVariables(){

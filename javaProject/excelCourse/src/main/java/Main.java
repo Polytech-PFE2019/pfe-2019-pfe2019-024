@@ -12,11 +12,10 @@ public class Main {
 
     public static void main(String[] args)
     {
-        //Tableau test = new Tableau("excelCourse/src/main/resources/Cross/2005-05BIBLIO_CR-L1.xls","Feuil1");
-        //System.out.println(test);
+
         List<String> filePath = null;
         ArrayList<Tableau> tab = new ArrayList<Tableau>();
-        try (Stream<Path> walk = Files.walk(Paths.get("excelCourse/src/main/resources"))) {
+        try (Stream<Path> walk = Files.walk(Paths.get("excelCourse/src/main/resources/excel"))) {
             filePath = walk.map(x -> x.toString())
                     .filter(f -> f.endsWith(".xls")).collect(Collectors.toList());
         } catch (IOException e) {
@@ -32,6 +31,7 @@ public class Main {
         GenerateDiffFile diff = new GenerateDiffFile();
         try {
             diff.generateHeaderDiffSheet(tab,filePath);
+            diff.generateHeaderSameNameFile(tab,filePath);
         } catch (IOException e) {
             e.printStackTrace();
         }
