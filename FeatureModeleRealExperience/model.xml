@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Experience">
+			<graphics key="collapsed" value="false"/>
+			<alt abstract="true" mandatory="true" name="Protocole">
+				<feature name="Cross"/>
+				<feature name="Line"/>
+				<feature name="Hybridation"/>
+				<feature name="SLE"/>
+				<and name="MLE">
+					<and abstract="true" mandatory="true" name="typeSLE">
+						<feature name="SLE1"/>
+						<feature name="SLE2"/>
+					</and>
+				</and>
+			</alt>
+			<or abstract="true" mandatory="true" name="Materiel">
+				<graphics key="collapsed" value="false"/>
+				<and name="génotype">
+					<and name="typeSemence">
+						<feature name="Co"/>
+						<feature name="AL"/>
+						<feature name="AP"/>
+						<feature name="CT"/>
+					</and>
+					<and name="typegénération">
+						<feature name="FixLine"/>
+						<feature name="Hybridationtype"/>
+						<feature name="Croisement"/>
+						<feature name="f1"/>
+						<feature name="f2"/>
+					</and>
+				</and>
+				<feature name="Produit"/>
+			</or>
+			<and abstract="true" name="ConditionExperimental">
+				<feature name="Irrigation"/>
+				<feature name="produit"/>
+				<feature name="interieur"/>
+			</and>
+			<and name="Géographie">
+				<and mandatory="true" name="pays">
+					<and mandatory="true" name="Region">
+						<and mandatory="true" name="lieuCulture">
+							<feature mandatory="true" name="uniteDeculture"/>
+						</and>
+					</and>
+				</and>
+			</and>
+			<feature name="Statistiques"/>
+			<alt name="MiseEnPlace">
+				<feature name="Route"/>
+				<feature name="PlanType"/>
+			</alt>
+			<and abstract="true" mandatory="true" name="Niveaux">
+				<graphics key="collapsed" value="false"/>
+				<and mandatory="true" name="niveau1">
+					<and mandatory="true" name="presentation">
+						<and name="colonnes">
+							<feature name="nomSemence"/>
+							<feature name="CodeParcelle"/>
+							<feature name="CodeLot"/>
+							<feature name="Quantité"/>
+						</and>
+					</and>
+				</and>
+				<feature name="niveau2"/>
+				<feature name="niveau3"/>
+			</and>
+			<feature abstract="true" name="NiveauCovariable"/>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>SLE</var>
+				<var>Géographie</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Géographie</var>
+				<var>MiseEnPlace</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

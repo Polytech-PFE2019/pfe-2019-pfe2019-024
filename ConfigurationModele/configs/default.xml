@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="Structure"/>
+	<feature name="Utilisateur"/>
+	<feature name="GroupeUtilisateur"/>
+	<feature name="NiveauxCovariable"/>
+	<feature name="ReferenceStock"/>
+	<feature name="génotype"/>
+	<feature name="Produit"/>
+	<feature manual="selected" name="ConditionExp"/>
+	<feature automatic="selected" manual="selected" name="Nom"/>
+	<feature automatic="selected" name="Niveaux"/>
+	<feature automatic="selected" name="Niveau1"/>
+	<feature automatic="selected" name="Variables"/>
+	<feature name="ColonneDeStructureLiee"/>
+	<feature name="ConditionExperimentale"/>
+	<feature name="ColonneSysteme"/>
+	<feature automatic="selected" name="ColonneUtilisateur"/>
+	<feature name="libelle"/>
+	<feature name="ParentalUse"/>
+	<feature name="Quantity"/>
+	<feature automatic="selected" name="type"/>
+	<feature manual="selected" name="int"/>
+	<feature automatic="unselected" name="string"/>
+	<feature automatic="unselected" name="float"/>
+	<feature name="Identifiant"/>
+	<feature name="Compteur"/>
+	<feature name="TypeDeCroisement"/>
+	<feature name="Etiquette"/>
+	<feature name="Formulaire"/>
+	<feature name="Rapport"/>
+	<feature name="Interface"/>
+	<feature automatic="selected" name="Presentation"/>
+	<feature automatic="selected" name="Nompresentation"/>
+	<feature automatic="selected" name="Colonnes"/>
+	<feature name="systeme"/>
+	<feature name="libellee"/>
+	<feature name="ProtocoleLevel"/>
+	<feature name="typeGeneration"/>
+	<feature name="MainName"/>
+	<feature name="Year"/>
+	<feature name="identifiant"/>
+	<feature name="Tri"/>
+	<feature name="Niveau2"/>
+	<feature name="Niveau3"/>
+	<feature name="ProfileDeCroisement"/>
+	<feature name="MLE"/>
+	<feature name="SLEProtocole"/>
+	<feature automatic="selected" name="TypeDeStructure"/>
+	<feature manual="selected" name="stock"/>
+	<feature automatic="unselected" name="experimentation"/>
+	<feature automatic="unselected" name="Selection"/>
+</configuration>

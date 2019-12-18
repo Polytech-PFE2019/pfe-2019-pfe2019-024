@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Structure">
+			<and name="Utilisateur">
+				<feature name="GroupeUtilisateur"/>
+			</and>
+			<feature name="NiveauxCovariable"/>
+			<alt name="ReferenceStock">
+				<feature name="génotype"/>
+				<feature name="Produit"/>
+			</alt>
+			<feature name="ConditionExp"/>
+			<feature mandatory="true" name="Nom"/>
+			<and abstract="true" mandatory="true" name="Niveaux">
+				<and mandatory="true" name="Niveau1">
+					<graphics key="collapsed" value="false"/>
+					<and abstract="true" mandatory="true" name="Variables">
+						<graphics key="collapsed" value="false"/>
+						<feature name="ColonneDeStructureLiee"/>
+						<feature name="ConditionExperimentale"/>
+						<feature name="ColonneSysteme"/>
+						<and mandatory="true" name="ColonneUtilisateur">
+							<and abstract="true" name="libelle">
+								<graphics key="collapsed" value="false"/>
+								<feature name="ParentalUse"/>
+								<feature name="Quantity"/>
+							</and>
+							<alt mandatory="true" name="type">
+								<feature name="int"/>
+								<feature name="string"/>
+								<feature name="float"/>
+							</alt>
+							<feature name="Identifiant"/>
+						</and>
+						<feature name="Compteur"/>
+						<feature name="TypeDeCroisement"/>
+					</and>
+					<feature name="Etiquette"/>
+					<feature name="Formulaire"/>
+					<feature name="Rapport"/>
+					<feature name="Interface"/>
+					<and mandatory="true" name="Presentation">
+						<feature mandatory="true" name="Nompresentation"/>
+						<and mandatory="true" name="Colonnes">
+							<feature name="systeme"/>
+							<and name="libellee">
+								<feature name="ProtocoleLevel"/>
+								<feature name="typeGeneration"/>
+								<feature name="MainName"/>
+								<feature name="Year"/>
+							</and>
+							<feature name="identifiant"/>
+						</and>
+						<feature name="Tri"/>
+					</and>
+				</and>
+				<feature name="Niveau2"/>
+				<feature name="Niveau3"/>
+			</and>
+			<feature name="ProfileDeCroisement"/>
+			<feature name="MLE"/>
+			<feature name="SLEProtocole"/>
+			<alt abstract="true" mandatory="true" name="TypeDeStructure">
+				<feature name="stock"/>
+				<feature name="experimentation"/>
+				<feature name="Selection">
+					<graphics key="collapsed" value="false"/>
+				</feature>
+			</alt>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<description>Les experience MLE sont associés a des experiences de type SLE</description>
+			<imp>
+				<var>MLE</var>
+				<var>SLEProtocole</var>
+			</imp>
+		</rule>
+		<rule>
+			<description>Si la structure est de type stock alors nous n'avons pas besoin de certain objet associé a une experience</description>
+			<imp>
+				<var>stock</var>
+				<not>
+					<conj>
+						<var>ConditionExperimentale</var>
+						<conj>
+							<var>ReferenceStock</var>
+							<conj>
+								<var>ProfileDeCroisement</var>
+								<conj>
+									<var>SLEProtocole</var>
+									<var>MLE</var>
+								</conj>
+							</conj>
+						</conj>
+					</conj>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+			<description>si la structure est une experience alors on aura une reference vers un stock</description>
+			<imp>
+				<disj>
+					<var>Selection</var>
+					<var>experimentation</var>
+				</disj>
+				<var>ReferenceStock</var>
+			</imp>
+		</rule>
+		<rule>
+			<description>si la structure est une experience ,d'apres les fichier excel, on aura forcement ces deux colonnes créés par l'utilisateur</description>
+			<imp>
+				<disj>
+					<var>Selection</var>
+					<var>experimentation</var>
+				</disj>
+				<conj>
+					<var>Year</var>
+					<var>MainName</var>
+				</conj>
+			</imp>
+		</rule>
+	</constraints>
+	<featureOrder userDefined="true">
+		<feature name="Utilisateur"/>
+		<feature name="GroupeUtilisateur"/>
+		<feature name="NiveauxCovariable"/>
+		<feature name="ReferenceStock"/>
+		<feature name="génotype"/>
+		<feature name="Produit"/>
+		<feature name="ConditionExp"/>
+		<feature name="Nom"/>
+		<feature name="Niveau1"/>
+		<feature name="ColonneDeStructureLiee"/>
+		<feature name="ConditionExperimentale"/>
+		<feature name="ColonneUtilisateur"/>
+		<feature name="Year"/>
+		<feature name="ProtocoleLevel"/>
+		<feature name="MainName"/>
+		<feature name="ParentalUse"/>
+		<feature name="Quantity"/>
+		<feature name="type"/>
+		<feature name="int"/>
+		<feature name="string"/>
+		<feature name="float"/>
+		<feature name="Compteur"/>
+		<feature name="TypeDeCroisement"/>
+		<feature name="Etiquette"/>
+		<feature name="Formulaire"/>
+		<feature name="Interface"/>
+		<feature name="Presentation"/>
+		<feature name="Colonnes"/>
+		<feature name="Nompresentation"/>
+		<feature name="Tri"/>
+		<feature name="Rapport"/>
+		<feature name="Niveau2"/>
+		<feature name="Niveau3"/>
+		<feature name="ProfileDeCroisement"/>
+		<feature name="MLE"/>
+		<feature name="SLEProtocole"/>
+		<feature name="stock"/>
+		<feature name="experimentation"/>
+		<feature name="Selection"/>
+		<feature name="typeGeneration"/>
+		<feature name="ColonneSysteme"/>
+		<feature name="Identifiant"/>
+		<feature name="systeme"/>
+		<feature name="libellee"/>
+		<feature name="identifiant"/>
+	</featureOrder>
+</featureModel>

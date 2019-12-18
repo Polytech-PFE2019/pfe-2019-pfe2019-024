@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="Experience"/>
+	<feature automatic="selected" name="Protocole"/>
+	<feature automatic="unselected" name="Cross"/>
+	<feature automatic="unselected" name="Line"/>
+	<feature manual="selected" name="Hybridation"/>
+	<feature automatic="unselected" name="SLE"/>
+	<feature automatic="unselected" name="MLE"/>
+	<feature automatic="unselected" name="typeSLE"/>
+	<feature automatic="unselected" name="SLE1"/>
+	<feature automatic="unselected" name="SLE2"/>
+	<feature automatic="selected" name="Materiel"/>
+	<feature manual="selected" name="génotype"/>
+	<feature name="typeSemence"/>
+	<feature name="Co"/>
+	<feature name="AL"/>
+	<feature name="AP"/>
+	<feature name="CT"/>
+	<feature name="typegénération"/>
+	<feature name="FixLine"/>
+	<feature name="Hybridationtype"/>
+	<feature name="Croisement"/>
+	<feature name="f1"/>
+	<feature name="f2"/>
+	<feature name="Produit"/>
+	<feature name="ConditionExperimental"/>
+	<feature name="Irrigation"/>
+	<feature name="produit"/>
+	<feature name="interieur"/>
+	<feature name="Géographie"/>
+	<feature name="pays"/>
+	<feature name="Region"/>
+	<feature name="lieuCulture"/>
+	<feature name="uniteDeculture"/>
+	<feature name="Statistiques"/>
+	<feature name="MiseEnPlace"/>
+	<feature name="Route"/>
+	<feature name="PlanType"/>
+	<feature automatic="selected" name="Niveaux"/>
+	<feature automatic="selected" name="niveau1"/>
+	<feature automatic="selected" name="presentation"/>
+	<feature name="colonnes"/>
+	<feature name="nomSemence"/>
+	<feature name="CodeParcelle"/>
+	<feature name="CodeLot"/>
+	<feature name="Quantité"/>
+	<feature name="niveau2"/>
+	<feature name="niveau3"/>
+	<feature name="NiveauCovariable"/>
+</configuration>
