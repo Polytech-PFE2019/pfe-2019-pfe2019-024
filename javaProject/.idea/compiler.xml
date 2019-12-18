@@ -11,6 +11,5 @@
         <module name="RndExp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="10" />
   </component>
 </project>
