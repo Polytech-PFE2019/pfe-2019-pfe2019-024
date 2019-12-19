@@ -2,15 +2,9 @@
 
  package "Experience" #DDDDDD{ 
 Class Experience
-Class Protocole
 }
  package "Geographie" #DDDDDD { 
 Class UniteDeCulture
-}
- package "Materiel" #DDDDDD { 
-Class Materiel
-Class Produit
-Class Semence
 }
  package "niveau" #DDDDDD { 
 Class Colonne
@@ -27,15 +21,19 @@ Class InterfaceMatricielle
 Class PresentationMatricielle
 Class Rapports
 }
+ package "protocole" #DDDDDD { 
+Class Protocole
+}
  package "Stock" #DDDDDD { 
+Class Materiel
+Class Produit
+Class Semence
 Class Stock
 }
-Experience <|-- Protocole : extends  
+Experience --> Protocole : protocole
 Experience --> "0..*"UniteDeCulture : uniteDeCultures
-Experience --> "0..*"Materiel : materiel
-Protocole --> Niveau : niveaux
-Produit <|-- Materiel : extends  
-Semence <|-- Materiel : extends  
+Experience --> Niveau : niveaux
+Experience --> Stock : Stock
 Niveau --> "0..*"Presentation : presentations
 Niveau --> "0..*"Colonne : colonnes
 Niveau --> "0..*"Etiquette : etiquettes
@@ -47,6 +45,9 @@ Niveau --> "0..*"Rapports : rapports
 NiveauCovariable <|-- NiveauExp : extends  
 NiveauExp <|-- Niveau : extends  
 Presentation --> "0..*"Colonne : variables
+Materiel --> Colonne : new
+Produit <|-- Materiel : extends  
+Semence <|-- Materiel : extends  
 Stock --> Niveau : niveaux
 Stock --> Materiel : materiels
 @enduml

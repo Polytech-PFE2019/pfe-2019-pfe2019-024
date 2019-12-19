@@ -15,6 +15,7 @@ public class Main {
     public static void main(String[] args){
         try {
             GeneratePlantUml test = new GeneratePlantUml();
+            GenerateXmlFeatureModel test2 = new GenerateXmlFeatureModel();
         } catch (IOException e) {
             e.printStackTrace();
         }

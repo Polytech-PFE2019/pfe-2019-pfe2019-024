@@ -27,19 +27,19 @@
 			<or abstract="true" mandatory="true" name="Materiel">
 				<graphics key="collapsed" value="false"/>
 				<and name="génotype">
-					<and name="typeSemence">
+					<or name="typeSemence">
 						<feature name="Co"/>
 						<feature name="AL"/>
 						<feature name="AP"/>
 						<feature name="CT"/>
-					</and>
-					<and name="typegénération">
+					</or>
+					<or name="typegénération">
 						<feature name="FixLine"/>
 						<feature name="Hybridationtype"/>
 						<feature name="Croisement"/>
 						<feature name="f1"/>
 						<feature name="f2"/>
-					</and>
+					</or>
 				</and>
 				<feature name="Produit"/>
 			</or>

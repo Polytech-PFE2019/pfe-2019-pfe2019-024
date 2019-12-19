@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties> 
+	<struct> 
+		<and name="Structure">
+			<feature name="Stock"/>
+			<and name="GroupeUtilisateur">
+				<feature name="Utilisateur"/>
+			</and>
+			<and name="Niveau">
+				<and name="Presentation">
+					<and name="Variable">
+						<feature name="ColonnesDeStructureLiee"/>
+						<feature name="ColonneUtilisateur"/>
+						<feature name="ColonneUtilisateurDeLien"/>
+						<feature name="Compteur"/>
+						<feature name="ConditionsExperimentale"/>
+						<feature name="TypeDeCroisement"/>
+					</and>
+				</and>
+				<feature name="Etiquette"/>
+				<feature name="Formulaire"/>
+				<feature name="Interface"/>
+				<feature name="InterfaceMatricielle"/>
+				<feature name="PresentationMatricielle"/>
+				<feature name="Rapports"/>
+				<feature name="NiveauCovariable"/>
+			</and>
+			<feature name="TypeObservationMultiple"/>
+			<feature name="InformationObservationMultiple"/>
+			<and name="StructureExperiment">
+				<feature name="Phyto"/>
+				<feature name="Planning"/>
+				<feature name="ProfilDiagnostic"/>
+				<and name="StructureExperimentCross">
+					<feature name="Experimentation"/>
+					<feature name="Selection"/>
+					<feature name="ProfilDeCroisement"/>
+					<feature name="ProfilMatriceDeCroisement"/>
+				</and>
+			</and>
+		</and>
+	</struct>
+
+</featureModel>

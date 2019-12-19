@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public abstract class Structure {
 
-    private Utilisateur [] utilisateurs ;
+    private GroupeUtilisateur [] utilisateurs ;
     private ArrayList < Niveau > niveaux ;
     private TypeObservationMultiple typeObservationMultiple ;
     private InformationObservationMultiple InformationObservationMultiple ;
@@ -23,11 +23,11 @@ public abstract class Structure {
         }
     }
 
-    public Utilisateur[] getUtilisateurs() {
+    public GroupeUtilisateur[] getUtilisateurs() {
         return utilisateurs;
     }
 
-    public void setUtilisateurs(Utilisateur[] utilisateurs) {
+    public void setUtilisateurs(GroupeUtilisateur[] utilisateurs) {
         this.utilisateurs = utilisateurs;
     }
 

@@ -30,7 +30,6 @@ Class Utilisateur
 }
  package "structure" #DDDDDD { 
 Class Experimentation
-Class Link
 Class Phyto
 Class Planning
 Class Selection
@@ -40,7 +39,6 @@ Class StructureExperiment
 Class StructureExperimentCross
 }
  package "variable" #DDDDDD { 
-Class ChoixLimite
 Class ColonnesDeStructureLiee
 Class ColonneUtilisateur
 Class ColonneUtilisateurDeLien
@@ -66,7 +64,7 @@ Phyto <|-- StructureExperiment : extends
 Planning <|-- StructureExperiment : extends  
 Selection <|-- StructureExperimentCross : extends  
 Stock <|-- Structure : extends  
-Structure --> "0..*"Utilisateur : utilisateurs
+Structure --> "0..*"GroupeUtilisateur : utilisateurs
 Structure --> "0..*"Niveau : niveaux
 Structure --> TypeObservationMultiple : typeObservationMultiple
 Structure --> InformationObservationMultiple : InformationObservationMultiple

@@ -131,7 +131,7 @@ public class Scenario {
 
     private static ArrayList getMaterielsSemencesVariables(){
         ArrayList<Variable> variables = new ArrayList<>();
-        variables.add(factoryColonnesUtilisateur.createVariable("Nom Materiel","String"));
+        variables.add(factoryColonnesUtilisateur.createVariable("Nom Stock.Materiel","String"));
         variables.add(factoryColonnesUtilisateur.createVariable("Semence type","String"));
         variables.add(factoryColonnesUtilisateur.createVariable("Parent mal","String"));
         variables.add(factoryColonnesUtilisateur.createVariable("Parent femelle","String"));

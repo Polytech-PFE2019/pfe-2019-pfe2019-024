@@ -1,6 +1,5 @@
 package Stock;
 
-import Materiel.Materiel;
 import niveau.Niveau;
 
 import java.util.ArrayList;
