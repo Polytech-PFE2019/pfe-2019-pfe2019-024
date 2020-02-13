@@ -7,25 +7,57 @@ import variable.ColonneUtilisateur;
 import variable.Variable;
 import variable.factory.VariableFactoryColonnesUtilisateur;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Scenario {
 
+
     static final VariableFactoryColonnesUtilisateur factoryColonnesUtilisateur = new VariableFactoryColonnesUtilisateur();
     static final StructureFactory factoryStructure = new StructureFactory();
+    private FileWriter fr;
+    private File file;
+    private BufferedWriter writer;
 
+    public static Scenario getInstance() throws IOException {
+        return new Scenario();
+    }
+
+    private Scenario() throws IOException {
+        file = new File("Manager/src/main/resources/piplineGenerator.txt");
+        if (file.exists() && file.isFile())
+        {
+            file.delete();
+        }
+        file.createNewFile();
+        file = new File("Manager/src/main/resources/pipelineGenerator.txt");
+        fr =new FileWriter("Manager/src/main/resources/pipelineGenerator.txt",true);
+        writer = new BufferedWriter(fr);
+    }
     //---------Scenario creer une structure
     public static Structure scenarioCreerStructureStockage(String nom, int nbLevel){
         Structure struct = creerStructureStockage(nom, nbLevel);
         return struct;
     }
 /////////////////////////////////////////////////////////////////////////////////
-    public static Structure scenarioCreerStructureSelection(String nom, int nbLevel, Niveau reference){
+    public Structure scenarioCreerStructureSelection(String nom, int nbLevel, Niveau reference) throws IOException {
+        writer.write("Structure -> Selection -> nom | nombreNiveau | ");
         Structure struct = creerStructureSelection(nom, nbLevel, reference);
         return struct;
     }
 
-    public static void scenarioConfigurationNiveau(Structure structure){
+    public void scenarioConfigurationNiveau(Structure structure) throws IOException {
+
+        writer.write("niveaux ->");
+        writer.write("niveau1 ");
+        for(int i = 1; i < structure.getNiveaux().size();i++) {
+            writer.write(" | niveau"+(i+1));
+        }
+
+        /*
         for(int i = 0; i < structure.getNiveaux().size();i++) {
             ajoutVariableNiveau(structure.getNiveau(i));
             creerPresentation(structure,i,"");
@@ -35,7 +67,7 @@ public class Scenario {
             configureInterfaceMatricielle();
             configurePresentationMatricielle();
             configureRapports();
-        }
+        }*/
         
     }
 

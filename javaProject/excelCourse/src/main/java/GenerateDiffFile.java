@@ -11,9 +11,11 @@ import org.apache.poi.ss.usermodel.*;
 
 public class GenerateDiffFile {
 
-    HSSFWorkbook workbook;
-    File file;
-    CellStyle cs;
+    private HSSFWorkbook workbook;
+    private File file;
+    private CellStyle cs;
+
+
     public GenerateDiffFile(){
         workbook = new HSSFWorkbook();
         file = new File(System.getProperty("user.dir")+"\\excelCourse\\src\\main\\output\\diff.xls");
@@ -22,32 +24,42 @@ public class GenerateDiffFile {
     }
 
     public void generateHeaderDiffSheet(ArrayList<Tableau> tab, List<String> expName) throws IOException {
+
         HSSFSheet sheet = workbook.createSheet("Header");
-
-
         Cell cell;
         Row row;
         row = sheet.createRow(0);
+
+        //generate line and colonne name in fuction of file
         for(int i = 0 ; i < tab.size();i++){
-
             cell = row.createCell(i+1, CellType.STRING);
-            cell.setCellValue(expName.get(i));
-
+            cell.setCellValue(expName.get(i).substring(0,expName.get(i).indexOf(".")));
         }
+
         for(int i = 0 ; i < tab.size();i++) {
             row = sheet.createRow(i+1);
             cell = row.createCell(0, CellType.STRING);
-            cell.setCellValue(expName.get(i));
+            cell.setCellValue(expName.get(i).substring(0,expName.get(i).indexOf(".")));
             for(int j = 0 ; j < tab.size();j++){
-                cell = row.createCell(j+1, CellType.STRING);
-                if(i != j) {
-                    cell.setCellValue(tab.get(i).compareHeader(tab.get(j)).substring(tab.get(i).compareHeader(tab.get(j)).indexOf(".") + 1));
-                }else{
-                    cell.setCellValue("xxx");
+                 if((sheet.getRow(i+1).getCell(0).getStringCellValue().contains("niveau_1")&&
+                   sheet.getRow(0).getCell(j+1).getStringCellValue().contains("niveau_1"))||
+                   (sheet.getRow(i+1).getCell(0).getStringCellValue().contains("niveau_2") &&
+                    sheet.getRow(0).getCell(j+1).getStringCellValue().contains("niveau_2"))){
+
+                    cell = row.createCell(j + 1, CellType.STRING);
+                    if (i != j) {
+                        cell.setCellValue(tab.get(i).compareHeader(tab.get(j)).substring(tab.get(i).compareHeader(tab.get(j)).indexOf(".") + 1));
+                    } else {
+                        cell.setCellValue("xxx");
+                    }
+                    cell.setCellStyle(cs);
                 }
-                cell.setCellStyle(cs);
+                else{
+                    cell.setCellStyle(cs);
+                }
             }
         }
+
         for(int i = 0 ; i < tab.size()+1;i++){
             sheet.autoSizeColumn(i);
         }
@@ -57,23 +69,23 @@ public class GenerateDiffFile {
     }
 
     public void generateHeaderSameNameFile(ArrayList<Tableau> tab, List<String> expName) throws IOException {
+
         HSSFSheet sheet = workbook.createSheet("HeaderNameSameColone");
-
-
         Cell cell;
         Row row;
         row = sheet.createRow(0);
-        for(int i = 0 ; i < tab.size();i++){
 
+        for(int i = 0 ; i < tab.size();i++){
             cell = row.createCell(i+1, CellType.STRING);
             cell.setCellValue(expName.get(i));
-
         }
+
         for(int i = 0 ; i < tab.size();i++) {
             row = sheet.createRow(i+1);
             cell = row.createCell(0, CellType.STRING);
             cell.setCellValue(expName.get(i));
             for(int j = 0 ; j < tab.size();j++){
+
                 cell = row.createCell(j+1, CellType.STRING);
                 if(i != j) {
                     cell.setCellValue(tab.get(i).compareHeader(tab.get(j)).substring(0,tab.get(i).compareHeader(tab.get(j)).indexOf(".")));
@@ -83,6 +95,7 @@ public class GenerateDiffFile {
                 cell.setCellStyle(cs);
             }
         }
+
         for(int i = 0 ; i < tab.size()+1;i++){
             sheet.autoSizeColumn(i);
         }

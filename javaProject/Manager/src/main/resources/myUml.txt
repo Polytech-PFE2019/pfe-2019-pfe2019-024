@@ -1,6 +1,13 @@
 @startuml 
 
- package "niveau" #DDDDDD{ 
+ package "generator" #DDDDDD{ 
+Class Generator
+Class Visitor
+}
+ package "kernel" #DDDDDD { 
+Class ScenarioApp
+}
+ package "niveau" #DDDDDD { 
 Class Niveau
 Class NiveauCovariable
 Class Presentation
@@ -11,7 +18,7 @@ Class Formulaire
 Class Interface
 Class InterfaceMatricielle
 Class PresentationMatricielle
-Class Rapports
+Class Rapport
 }
  package "observationMultiple" #DDDDDD { 
 Class InformationObservationMultiple
@@ -47,6 +54,7 @@ Class ConditionsExperimentale
 Class TypeDeCroisement
 Class Variable
 }
+ScenarioApp --> Structure : Structure
 Niveau --> "0..*"Presentation : presentations
 Niveau --> "0..*"Variable : variables
 Niveau --> "0..*"Etiquette : etiquettes
@@ -54,7 +62,6 @@ Niveau --> "0..*"Formulaire : formulaires
 Niveau --> "0..*"Interface : interfaces
 Niveau --> "0..*"InterfaceMatricielle : interfaceMatricielles
 Niveau --> "0..*"PresentationMatricielle : presentationMatricielles
-Niveau --> "0..*"Rapports : rapports
 NiveauCovariable <|-- Niveau : extends  
 Presentation --> "0..*"Variable : variables
 GroupeUtilisateur --> "0..*"Utilisateur : utilisateurs

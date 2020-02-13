@@ -1,4 +1,5 @@
 package structure;
+import dsl.kernel.generator.Visitor;
 import niveau.*;
 import securite.*;
 import observationMultiple.*;
@@ -21,6 +22,10 @@ public abstract class Structure {
         for(int i = 1; i <= nombreNiveau; i++){
             niveaux.add(new Niveau(i));
         }
+    }
+
+    public void accept(Visitor visitor, Class< ? extends Structure> kind) {
+        visitor.visit(this, kind);
     }
 
     public GroupeUtilisateur[] getUtilisateurs() {

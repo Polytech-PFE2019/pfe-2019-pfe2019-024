@@ -14,12 +14,14 @@ public class Niveau {
     private ArrayList < Interface > interfaces ;
     private ArrayList < InterfaceMatricielle > interfaceMatricielles ;
     private ArrayList < PresentationMatricielle > presentationMatricielles ;
-    private ArrayList < Rapports > rapports ;
+    private ArrayList <Rapport> rapports ;
 
     private int id;
 
     public Niveau(int id){
         this.id = id;
+        etiquettes = new ArrayList<>();
+        rapports = new ArrayList<>();
         variables = new ArrayList<Variable>();
         presentations = new ArrayList<Presentation>();
     }
@@ -31,7 +33,16 @@ public class Niveau {
     public void addPresentation(Presentation presentation){
         this.presentations.add(presentation);
     }
-    public ArrayList getVariables() {
+
+    public void addRapport(Rapport rapport){
+        this.rapports.add(rapport);
+    }
+
+    public void addEtiquette(Etiquette etiquette){
+        this.etiquettes.add(etiquette);
+    }
+
+    public ArrayList<Variable> getVariables() {
         return variables;
     }
 
@@ -41,6 +52,8 @@ public class Niveau {
     public ArrayList<Presentation> getPresentations() {
         return presentations;
     }
+
+
     public Presentation getPresentation(String nom) {
         for(int i = 0; i < presentations.size();i++){
 
@@ -62,6 +75,14 @@ public class Niveau {
         this.id = id;
     }
 
+    public ArrayList<Etiquette> getEtiquettes() {
+        return etiquettes;
+    }
+
+    public ArrayList<Rapport> getRapports() {
+        return rapports;
+    }
+
     @Override
     public String toString(){
         String res = "Variables : [ ";
@@ -74,5 +95,8 @@ public class Niveau {
         }
         return res;
     }
+
+
+
 
 }

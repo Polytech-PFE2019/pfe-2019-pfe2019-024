@@ -54,6 +54,7 @@ public class GeneratePlantUml {
             packagePath = filePath.get(i).substring(0,filePath.get(i).lastIndexOf("\\"));
             if(packagePath.substring(packagePath.lastIndexOf("\\")+1).equals("java") ||
                     packagePath.substring(packagePath.lastIndexOf("\\")+1).equals("businessLevel") ||
+                    packagePath.substring(packagePath.lastIndexOf("\\")+1).equals("builder") ||
                     packagePath.substring(packagePath.lastIndexOf("\\")+1).equals("factory")){
                 filePath.remove(i);
                 i--;

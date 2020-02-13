@@ -144,7 +144,7 @@ public class Tableau
 
     public String compareHeader(Tableau tab){
         ArrayList<Object> header = new ArrayList<Object>(Arrays.asList(this.header));
-        int diff = this.getHeader().length;
+        int diff = getHeader().length;
         String res = "";
         for(int i = 0; i < tab.getHeader().length; i++){
             if(header.contains(tab.getHeader()[i])){
@@ -153,7 +153,8 @@ public class Tableau
                 diff--;
             }
         }
-        return res +"."+"Col : "+this.getHeader().length+"\nDiff : "+diff + "\nEq : "+ (this.getHeader().length - diff);
+
+        return res +"."+String.format("%.02f",(((float)(getHeader().length - diff)/getHeader().length)*100))+"%";
     }
 
 

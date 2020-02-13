@@ -1,4 +1,4 @@
 package niveau.tools;
 
-public class Rapports {
+public class Rapport {
 }
