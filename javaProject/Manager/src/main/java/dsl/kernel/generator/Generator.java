@@ -58,9 +58,9 @@ public class Generator extends Visitor<StringBuilder>{
     }
 
     public void typeVariableGenerator(List<Variable> variables,int i){
-        List colonneUtilisateurs = new ArrayList<>();
-        List compteur = new ArrayList<>();
-        List conditionExperimentale = new ArrayList();
+        List<Variable> colonneUtilisateurs = new ArrayList<Variable>();
+        List compteur = new ArrayList<Variable>();
+        List<Variable> conditionExperimentale = new ArrayList<Variable>();
 
         for(Variable var :variables){
             if( var instanceof ColonneUtilisateur){
@@ -70,19 +70,22 @@ public class Generator extends Visitor<StringBuilder>{
                 compteur.add(var);
             }
             if( var instanceof ConditionsExperimentale){
+                System.out.println("*************************** "+var.toString() );
                 conditionExperimentale.add(var);
             }
         }
         if(colonneUtilisateurs.size() > 0) {
+            System.out.println(colonneUtilisateurs);
             builder.append(tabgenerator() + "<and mandatory=\"true\" abstract=\"true\" name =\"ColonneUtilisateur" + i + "\">\n");
             tab++;
             for (int j = 0; j < colonneUtilisateurs.size(); j++) {
-                visit(variables.get(j), variables.get(j).getClass(), i+"");
+                visit(colonneUtilisateurs.get(j), colonneUtilisateurs.get(j).getClass(), i+"");
             }
             tab--;
             builder.append(tabgenerator() + "</and>\n");
         }
         if(compteur.size() > 0) {
+
             builder.append(tabgenerator() + "<and mandatory=\"true\" abstract=\"true\" name =\"Compteur" + i + "\">\n");
             tab++;
             for (int j = 0; j < compteur.size(); j++) {
@@ -92,11 +95,12 @@ public class Generator extends Visitor<StringBuilder>{
             builder.append(tabgenerator() + "</and>\n");
         }
         if(conditionExperimentale.size() > 0) {
+            System.out.println();
             builder.append(tabgenerator() + "<and mandatory=\"true\" abstract=\"true\" name =\"ConditionsExperimentale" + i + "\">\n");
             tab++;
 
             for (int j = 0; j < conditionExperimentale.size(); j++) {
-                visit(variables.get(j), variables.get(j).getClass(), i+"");
+                visit(conditionExperimentale.get(j), conditionExperimentale.get(j).getClass(), i+"");
             }
             tab--;
             builder.append(tabgenerator() + "</and>\n");
@@ -152,6 +156,7 @@ public class Generator extends Visitor<StringBuilder>{
 
     @Override
     public void visit(Variable variable, Class< ? extends Variable> kind,String from) {
+        System.out.println("*****************************"+variable.toString());
         builder.append(tabgenerator()+"<feature  mandatory=\"true\" name =\""+variable.getNom()+from+"\"/>\n");
     }
 

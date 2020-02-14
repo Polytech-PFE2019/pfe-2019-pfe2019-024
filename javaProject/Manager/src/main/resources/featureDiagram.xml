@@ -12,16 +12,16 @@
 	<struct>
 		<and abstract="true" mandatory="true" name ="Structure">
 			<and abstract="true" mandatory="true" name ="typeStructure">
-				<feature mandatory="true" name ="Selection"/>
-				<feature mandatory="true" name ="Stock"/>
+				<feature  name ="Selection"/>
+				<feature  name ="Stock"/>
 				</and>
 			<and  mandatory="true" name ="Niveau1">
 				<and  mandatory="true" name ="Variablesniveau1">
 					<and mandatory="true" abstract="true" name ="ColonneUtilisateur1">
-						<feature  mandatory="true" name ="Name1"/>
-						<feature  mandatory="true" name ="tg1"/>
+						<feature   name ="Name1"/>
+						<feature   name ="product1"/>
 						<feature   name ="Type1"/>
-						<feature  mandatory="true" name ="mdr1"/>
+						<feature   name ="id1"/>
 					</and>
 				</and>
 				<and  mandatory="true" name ="Presentations1">

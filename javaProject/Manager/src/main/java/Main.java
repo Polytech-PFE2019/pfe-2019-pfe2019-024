@@ -92,8 +92,8 @@ public class Main {
                         .CreerStructureStock("stock",2)
                         .ConfigurationNiveau(1)
                         .DebutAjoutVariables()
-                        .AjoutColonneUtilisateur("id","Int")
-                        .AjoutColonneUtilisateur("produitNom","String")
+                        .AjoutColonneUtilisateur("product","Int")
+                        .AjoutColonneUtilisateur("id","String")
                         .EndAddVariable()
 
                         .ConfigurationPresentation("General")

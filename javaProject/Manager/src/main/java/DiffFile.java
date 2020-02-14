@@ -107,8 +107,8 @@ public class DiffFile {
                         if (numberOfTabulation(outFile.get(indexFeatureOut)) == numberOfTabulation(fileToList.get(i).get(indexFeatureCurrent))) {
                             //si les feature n'ont pas le même nom
                             if(!featureNameOut.equals(featureNameCurrent)){
-                                tmpOutFile.add(outFile.get(indexFeatureOut));
-                                tmpOutFile.add(fileToList.get(i).get(indexFeatureCurrent));
+                                tmpOutFile.add(removeMandatory(outFile.get(indexFeatureOut)));
+                                tmpOutFile.add(removeMandatory(fileToList.get(i).get(indexFeatureCurrent)));
                                 indexFeatureOut++;
                                 indexFeatureCurrent++;
                             }else {

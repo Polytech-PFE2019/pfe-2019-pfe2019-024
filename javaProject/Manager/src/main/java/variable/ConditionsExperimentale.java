@@ -14,4 +14,13 @@ public class ConditionsExperimentale extends Variable {
         super(name);
         this.type = type;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public String toString(){
+        return "nom : " + getNom() + ", type : " + type;
+    }
 }
