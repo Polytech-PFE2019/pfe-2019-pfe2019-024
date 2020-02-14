@@ -39,17 +39,22 @@ public class Generator extends Visitor<StringBuilder>{
 
     @Override
     public void visit(Structure structure,Class< ? extends Structure> kind) {
+
         builder.append(tabgenerator()+"<and abstract=\"true\" mandatory=\"true\" name =\"Structure\">\n");
         tab++;
-        builder.append(tabgenerator()+ "<and mandatory=\"true\" name = \""
-                            + kind.toString().substring(kind.toString().indexOf(".")+1)
-                            +"\">\n");
+
+        builder.append(tabgenerator()+ "<and abstract=\"true\" mandatory=\"true\" name =\"typeStructure\">\n");
         tab++;
+        builder.append(tabgenerator()+ "<feature mandatory=\"true\" name =\""
+                + kind.toString().substring(kind.toString().indexOf(".")+1)
+                +"\"/>\n");
+        builder.append(tabgenerator()+"</and>\n");
+        tab--;
         for(int i = 0; i < structure.getNiveaux().size();i++){
             System.out.println(structure.getNiveaux().get(i).toString());
             visit(structure.getNiveaux().get(i),i+1);
         }
-        builder.append("\t\t\t</and> \n\t\t</and> \n");
+        builder.append("\n\t\t</and> \n");
     }
 
     public void typeVariableGenerator(List<Variable> variables,int i){

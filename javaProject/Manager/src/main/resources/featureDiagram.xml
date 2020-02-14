@@ -11,46 +11,51 @@
 	</properties> 
 	<struct>
 		<and abstract="true" mandatory="true" name ="Structure">
-			<and mandatory="true" name = "Selection">
-				<and  mandatory="true" name ="Niveau1">
-					<and  mandatory="true" name ="Variablesniveau1">
-						<and mandatory="true" abstract="true" name ="ColonneUtilisateur1">
-							<feature  mandatory="true" name ="Name1"/>
-							<feature   name ="Type1"/>
-						</and>
-					</and>
-					<and  mandatory="true" name ="Presentations1">
-						<and  mandatory="true" name ="P1General">
-						</and>
-						<and  mandatory="true" name ="P1All">
-						</and>
-					</and>
-					<feature  mandatory="true" name ="Rapport"/>
-					<feature   name ="Etiquette"/>
+			<and abstract="true" mandatory="true" name ="typeStructure">
+				<feature mandatory="true" name ="Selection"/>
+				<feature mandatory="true" name ="Stock"/>
 				</and>
-				<and  mandatory="true" name ="Niveau2">
-					<and  mandatory="true" name ="Variablesniveau2">
-						<and  abstract="true" name ="ConditionsExperimentale2">
-							<feature   name ="irrigation2"/>
-						</and>
-					</and>
-					<and  mandatory="true" name ="Presentations2">
-						<and  mandatory="true" name ="P2General">
-						</and>
+			<and  mandatory="true" name ="Niveau1">
+				<and  mandatory="true" name ="Variablesniveau1">
+					<and mandatory="true" abstract="true" name ="ColonneUtilisateur1">
+						<feature  mandatory="true" name ="Name1"/>
+						<feature  mandatory="true" name ="tg1"/>
+						<feature   name ="Type1"/>
+						<feature  mandatory="true" name ="mdr1"/>
 					</and>
 				</and>
-				<and   name ="Niveau3">
-					<and   name ="Variablesniveau3">
-						<and  abstract="true" name ="ColonneUtilisateur3">
-							<feature   name ="lotSemence3"/>
-						</and>
+				<and  mandatory="true" name ="Presentations1">
+					<and  mandatory="true" name ="P1General">
 					</and>
-					<and   name ="Presentations3">
-						<and   name ="P3General">
-						</and>
+					<and  mandatory="true" name ="P1All">
 					</and>
 				</and>
-			</and> 
+				<feature   name ="Rapport"/>
+				<feature   name ="Etiquette"/>
+			</and>
+			<and  mandatory="true" name ="Niveau2">
+				<and  mandatory="true" name ="Variablesniveau2">
+					<and  abstract="true" name ="ConditionsExperimentale2">
+						<feature   name ="irrigation2"/>
+					</and>
+				</and>
+				<and  mandatory="true" name ="Presentations2">
+					<and  mandatory="true" name ="P2General">
+					</and>
+				</and>
+			</and>
+			<and   name ="Niveau3">
+				<and   name ="Variablesniveau3">
+					<and  abstract="true" name ="ColonneUtilisateur3">
+						<feature   name ="lotSemence3"/>
+					</and>
+				</and>
+				<and   name ="Presentations3">
+					<and   name ="P3General">
+					</and>
+				</and>
+			</and>
+
 		</and> 
 	</struct>
 </featureModel>

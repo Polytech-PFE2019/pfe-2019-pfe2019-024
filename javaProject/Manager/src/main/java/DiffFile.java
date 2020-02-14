@@ -61,8 +61,11 @@ public class DiffFile {
         return feature.replace("mandatory=\"true\"","");
     }
     public String getFeteareName(String feature){
+        if(feature.length() > 20){
+            return feature.substring(feature.lastIndexOf("=")+2,feature.lastIndexOf("\""));
+        }
+        return "";
 
-        return"";
     }
     public void mergeModel(){
         int indexFeatureOut = 0;
@@ -103,12 +106,16 @@ public class DiffFile {
                         //si le nombre de tabulation est égale
                         if (numberOfTabulation(outFile.get(indexFeatureOut)) == numberOfTabulation(fileToList.get(i).get(indexFeatureCurrent))) {
                             //si les feature n'ont pas le même nom
-                            /*if(!featureNameOut.equals(featureNameCurrent)){
-                                // je sais pas quoi faire dans ce cas la maybe pas besoin de le gérer
-                            }*/
-                            tmpOutFile.add(outFile.get(indexFeatureOut));
-                            indexFeatureOut++;
-                            indexFeatureCurrent++;
+                            if(!featureNameOut.equals(featureNameCurrent)){
+                                tmpOutFile.add(outFile.get(indexFeatureOut));
+                                tmpOutFile.add(fileToList.get(i).get(indexFeatureCurrent));
+                                indexFeatureOut++;
+                                indexFeatureCurrent++;
+                            }else {
+                                tmpOutFile.add(outFile.get(indexFeatureOut));
+                                indexFeatureOut++;
+                                indexFeatureCurrent++;
+                            }
 
                         } else {
                             if (outFile.get(indexFeatureOut).length() < fileToList.get(i).get(indexFeatureCurrent).length()) {

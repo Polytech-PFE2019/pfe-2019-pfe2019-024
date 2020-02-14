@@ -87,6 +87,32 @@ public class Main {
         generator = new Generator();
         scenarioApp.accept(generator);
         arduinoAppGenerated.put(scenarioApp.getName(),generator);
+        scenarioApp =
+                scenario("scenario3")
+                        .CreerStructureStock("stock",2)
+                        .ConfigurationNiveau(1)
+                        .DebutAjoutVariables()
+                        .AjoutColonneUtilisateur("tg","Int")
+                        .AjoutColonneUtilisateur("mdr","String")
+                        .EndAddVariable()
+
+                        .ConfigurationPresentation("General")
+                        .FinConfigurationPresentation()
+                        .ConfigurationPresentation("All")
+                        .FinConfigurationPresentation()
+                        .FinConfigurationNiveau()
+                        .ConfigurationNiveau(2)
+                        .DebutAjoutVariables()
+                        .EndAddVariable()
+                        .ConfigurationPresentation("General")
+                        .FinConfigurationPresentation()
+                        .FinConfigurationNiveau()
+
+                        .build();
+
+        generator = new Generator();
+        scenarioApp.accept(generator);
+        arduinoAppGenerated.put(scenarioApp.getName(),generator);
         try {
             new File("out/").mkdir();
 

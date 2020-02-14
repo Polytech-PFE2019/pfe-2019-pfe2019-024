@@ -2,6 +2,7 @@ package dsl.builder;
 
 import dsl.kernel.ScenarioApp;
 import structure.Selection;
+import structure.Stock;
 import structure.Structure;
 
 import javax.security.auth.login.Configuration;
@@ -28,6 +29,10 @@ public class ScenarioBuilder {
 
     public ScenarioBuilder CreerStructureSelection(String name,int nblvl){
         scenarioApp.setStructure(new Selection(name,nblvl));
+        return this;
+    }
+    public ScenarioBuilder CreerStructureStock(String name,int nblvl){
+        scenarioApp.setStructure(new Stock(name,nblvl));
         return this;
     }
 
