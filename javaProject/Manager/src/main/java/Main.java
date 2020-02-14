@@ -28,6 +28,7 @@ public class Main {
             e.printStackTrace();
         }
         dsl();
+        new DiffFile();
         }
 
 

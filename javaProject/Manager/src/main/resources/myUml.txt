@@ -4,9 +4,6 @@
 Class Generator
 Class Visitor
 }
- package "kernel" #DDDDDD { 
-Class ScenarioApp
-}
  package "niveau" #DDDDDD { 
 Class Niveau
 Class NiveauCovariable
@@ -54,7 +51,6 @@ Class ConditionsExperimentale
 Class TypeDeCroisement
 Class Variable
 }
-ScenarioApp --> Structure : Structure
 Niveau --> "0..*"Presentation : presentations
 Niveau --> "0..*"Variable : variables
 Niveau --> "0..*"Etiquette : etiquettes
