@@ -15,13 +15,14 @@ public class VariableNiveauBuilder {
         this.niveau = niveau;
     }
 
-    public VariableNiveauBuilder AddUserColonne(String name, String type){
+    public VariableNiveauBuilder AjoutColonneUtilisateur(String name, String type){
         niveau.addVariable(new ColonneUtilisateur(name,type));
         System.out.println(niveau.toString());
         return this;
+
     }
 
-    public VariableNiveauBuilder AddConditionExp(String name, String type){
+    public VariableNiveauBuilder AjoutConditionExperimental(String name, String type){
         niveau.addVariable(new ConditionsExperimentale(name,type));
         System.out.println(niveau.toString());
         return this;

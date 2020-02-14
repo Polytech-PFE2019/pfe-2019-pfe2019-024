@@ -17,7 +17,12 @@ public class DiffFile {
         outFile = new ArrayList<>();
         fileToList = new ArrayList<>();
         tmpReaders = new ArrayList<>();
-
+        File file = new File("Manager/src/main/resources/featureDiagram.xml");
+        if (file.exists() && file.isFile())
+        {
+            file.delete();
+        }
+        file.createNewFile();
         BufferedWriter writer = new BufferedWriter(new FileWriter("Manager/src/main/resources/featureDiagram.xml",true));
         findAllFiles();
         System.out.println(filePath);

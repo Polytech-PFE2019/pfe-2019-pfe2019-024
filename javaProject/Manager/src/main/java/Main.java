@@ -1,12 +1,5 @@
-import businessLevel.UserVariable;
 import dsl.kernel.ScenarioApp;
 import dsl.kernel.generator.Generator;
-import niveau.Presentation;
-import structure.factory.StructureFactory;
-import structure.Structure;
-import variable.*;
-import variable.factory.*;
-import structure.*;
 
 import java.io.*;
 import java.util.HashMap;
@@ -41,21 +34,20 @@ public class Main {
                 scenario("scenario1")
                         .CreerStructureSelection("cross",2)
                         .ConfigurationNiveau(1)
-                            .BeginAddVariable()
-                                .AddUserColonne("Name","Int")
+                            .DebutAjoutVariables()
+                                .AjoutColonneUtilisateur("Name","Int")
                             .EndAddVariable()
                             .ConfigurationEtiquette()
                             .ConfigurationRapport()
                             .ConfigurationPresentation("General")
-                                .AddUserColonne("Name","Int")
-                            .EndConfigurationPresentation()
+                            .FinConfigurationPresentation()
                             .ConfigurationPresentation("All")
-                            .EndConfigurationPresentation()
-                        .EndConfigurationNiveau()
+                            .FinConfigurationPresentation()
+                        .FinConfigurationNiveau()
                         .ConfigurationNiveau(2)
                             .ConfigurationPresentation("General")
-                        .EndConfigurationPresentation()
-                        .EndConfigurationNiveau()
+                        .FinConfigurationPresentation()
+                        .FinConfigurationNiveau()
                 .build();
 
         Generator generator = new Generator();
@@ -66,31 +58,30 @@ public class Main {
                 scenario("scenario2")
                         .CreerStructureSelection("cross",3)
                         .ConfigurationNiveau(1)
-                            .BeginAddVariable()
-                                .AddUserColonne("Name","Int")
-                                .AddUserColonne("Type","String")
+                            .DebutAjoutVariables()
+                                .AjoutColonneUtilisateur("Name","Int")
+                                .AjoutColonneUtilisateur("Type","String")
                             .EndAddVariable()
                             .ConfigurationRapport()
                             .ConfigurationPresentation("General")
-                                .AddUserColonne("Name","Int")
-                            .EndConfigurationPresentation()
+                            .FinConfigurationPresentation()
                             .ConfigurationPresentation("All")
-                                .EndConfigurationPresentation()
-                            .EndConfigurationNiveau()
+                                .FinConfigurationPresentation()
+                            .FinConfigurationNiveau()
                             .ConfigurationNiveau(2)
-                                .BeginAddVariable()
-                                    .AddConditionExp("irrigation","bool")
+                                .DebutAjoutVariables()
+                                    .AjoutConditionExperimental("irrigation","bool")
                                 .EndAddVariable()
                                 .ConfigurationPresentation("General")
-                            .EndConfigurationPresentation()
-                        .EndConfigurationNiveau()
+                            .FinConfigurationPresentation()
+                        .FinConfigurationNiveau()
                         .ConfigurationNiveau(3)
-                            .BeginAddVariable()
-                                .AddUserColonne("lotSemence","string")
+                            .DebutAjoutVariables()
+                                .AjoutColonneUtilisateur("lotSemence","string")
                             .EndAddVariable()
                             .ConfigurationPresentation("General")
-                            .EndConfigurationPresentation()
-                        .EndConfigurationNiveau()
+                            .FinConfigurationPresentation()
+                        .FinConfigurationNiveau()
                         .build();
 
         generator = new Generator();

@@ -14,12 +14,12 @@ public class PresentationBuilder {
         this.presentation = presentation;
     }
 
-    public PresentationBuilder AddUserColonne(String name, String type){
+    public PresentationBuilder AjoutColonneUtilisateur(String name, String type){
         presentation.addVariable(new ColonneUtilisateur(name, type));
         return this;
     }
 
-    public NiveauBuilder EndConfigurationPresentation(){
+    public NiveauBuilder FinConfigurationPresentation(){
 
         return this.parent;
     }

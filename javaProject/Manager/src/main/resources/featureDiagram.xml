@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><featureModel>	<properties>		<graphics key="showhiddenfeatures" value="true"/>		<graphics key="legendautolayout" value="true"/>		<graphics key="showshortnames" value="false"/>		<graphics key="layout" value="horizontal"/>		<graphics key="showcollapsedconstraints" value="true"/>		<graphics key="legendhidden" value="false"/>		<graphics key="layoutalgorithm" value="1"/>	</properties> 	<struct>		<and abstract="true" mandatory="true" name ="Structure">			<and mandatory="true" name = "Selection">				<and  mandatory="true" name ="niveau1">					<and  mandatory="true" name ="Variablesniveau1">						<and mandatory="true" abstract="true" name ="ColonneUtilisateur1">							<feature  mandatory="true" name ="nName"/>							<feature   name ="nType"/>						</and>					</and>					<and  mandatory="true" name ="PresentationsNiveau1">						<and  mandatory="true" name ="P1General">							<and mandatory="true" abstract="true" name ="ColonneUtilisateur1">								<feature  mandatory="true" name ="nName"/>							</and>							<feature  mandatory="true" name ="pName"/>						</and>						<and  mandatory="true" name ="P1All">						</and>					</and>					<feature  mandatory="true" name ="Rapport"/>					<feature   name ="Etiquette"/>				</and>				<and  mandatory="true" name ="niveau2">					<and  mandatory="true" name ="Variablesniveau2">						<and  abstract="true" name ="ConditionsExperimentale2">							<feature   name ="nirrigation"/>						</and>					</and>					<and  mandatory="true" name ="PresentationsNiveau2">						<and  mandatory="true" name ="P2General">						</and>					</and>				</and>				<and   name ="niveau3">					<and   name ="Variablesniveau3">						<and  abstract="true" name ="ColonneUtilisateur3">							<feature   name ="nlotSemence"/>						</and>					</and>					<and   name ="PresentationsNiveau3">						<and   name ="P3General">						</and>					</and>				</and>			</and> 		</and> 	</struct></featureModel><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <featureModel>
 	<properties>
 		<graphics key="showhiddenfeatures" value="true"/>
@@ -12,19 +12,15 @@
 	<struct>
 		<and abstract="true" mandatory="true" name ="Structure">
 			<and mandatory="true" name = "Selection">
-				<and  mandatory="true" name ="niveau1">
+				<and  mandatory="true" name ="Niveau1">
 					<and  mandatory="true" name ="Variablesniveau1">
 						<and mandatory="true" abstract="true" name ="ColonneUtilisateur1">
-							<feature  mandatory="true" name ="nName"/>
-							<feature   name ="nType"/>
+							<feature  mandatory="true" name ="Name1"/>
+							<feature   name ="Type1"/>
 						</and>
 					</and>
-					<and  mandatory="true" name ="PresentationsNiveau1">
+					<and  mandatory="true" name ="Presentations1">
 						<and  mandatory="true" name ="P1General">
-							<and mandatory="true" abstract="true" name ="ColonneUtilisateur1">
-								<feature  mandatory="true" name ="nName"/>
-							</and>
-							<feature  mandatory="true" name ="pName"/>
 						</and>
 						<and  mandatory="true" name ="P1All">
 						</and>
@@ -32,24 +28,24 @@
 					<feature  mandatory="true" name ="Rapport"/>
 					<feature   name ="Etiquette"/>
 				</and>
-				<and  mandatory="true" name ="niveau2">
+				<and  mandatory="true" name ="Niveau2">
 					<and  mandatory="true" name ="Variablesniveau2">
 						<and  abstract="true" name ="ConditionsExperimentale2">
-							<feature   name ="nirrigation"/>
+							<feature   name ="irrigation2"/>
 						</and>
 					</and>
-					<and  mandatory="true" name ="PresentationsNiveau2">
+					<and  mandatory="true" name ="Presentations2">
 						<and  mandatory="true" name ="P2General">
 						</and>
 					</and>
 				</and>
-				<and   name ="niveau3">
+				<and   name ="Niveau3">
 					<and   name ="Variablesniveau3">
 						<and  abstract="true" name ="ColonneUtilisateur3">
-							<feature   name ="nlotSemence"/>
+							<feature   name ="lotSemence3"/>
 						</and>
 					</and>
-					<and   name ="PresentationsNiveau3">
+					<and   name ="Presentations3">
 						<and   name ="P3General">
 						</and>
 					</and>

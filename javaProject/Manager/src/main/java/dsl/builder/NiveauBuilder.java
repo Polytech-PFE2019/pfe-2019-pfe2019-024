@@ -14,7 +14,7 @@ public class NiveauBuilder {
         this.niveau = niveau-1;
     }
 
-    public VariableNiveauBuilder BeginAddVariable(){
+    public VariableNiveauBuilder DebutAjoutVariables(){
         return new VariableNiveauBuilder(this, parent.getStructure().getNiveaux().get(niveau));
     }
 
@@ -36,7 +36,7 @@ public class NiveauBuilder {
         return this;
     }
 
-    public ScenarioBuilder EndConfigurationNiveau(){
+    public ScenarioBuilder FinConfigurationNiveau(){
 
         System.out.println(parent.getStructure().getNiveaux().get(niveau));
         return parent;

@@ -72,7 +72,7 @@ public class Generator extends Visitor<StringBuilder>{
             builder.append(tabgenerator() + "<and mandatory=\"true\" abstract=\"true\" name =\"ColonneUtilisateur" + i + "\">\n");
             tab++;
             for (int j = 0; j < colonneUtilisateurs.size(); j++) {
-                visit(variables.get(j), variables.get(j).getClass(), "n");
+                visit(variables.get(j), variables.get(j).getClass(), i+"");
             }
             tab--;
             builder.append(tabgenerator() + "</and>\n");
@@ -81,7 +81,7 @@ public class Generator extends Visitor<StringBuilder>{
             builder.append(tabgenerator() + "<and mandatory=\"true\" abstract=\"true\" name =\"Compteur" + i + "\">\n");
             tab++;
             for (int j = 0; j < compteur.size(); j++) {
-                visit(variables.get(j), variables.get(j).getClass(), "n");
+                visit(variables.get(j), variables.get(j).getClass(), i+"");
             }
             tab--;
             builder.append(tabgenerator() + "</and>\n");
@@ -91,7 +91,7 @@ public class Generator extends Visitor<StringBuilder>{
             tab++;
 
             for (int j = 0; j < conditionExperimentale.size(); j++) {
-                visit(variables.get(j), variables.get(j).getClass(), "n");
+                visit(variables.get(j), variables.get(j).getClass(), i+"");
             }
             tab--;
             builder.append(tabgenerator() + "</and>\n");
@@ -100,7 +100,7 @@ public class Generator extends Visitor<StringBuilder>{
 
     @Override
     public void visit(Niveau niveau,int i) {
-        builder.append(tabgenerator()+"<and  mandatory=\"true\" name =\"niveau"+i+"\">\n");
+        builder.append(tabgenerator()+"<and  mandatory=\"true\" name =\"Niveau"+i+"\">\n");
         tab++;
         builder.append(tabgenerator()+"<and  mandatory=\"true\" name =\"Variablesniveau"+i+"\">\n");
         tab++;
@@ -108,7 +108,7 @@ public class Generator extends Visitor<StringBuilder>{
         tab--;
         builder.append(tabgenerator()+"</and>\n");
 
-        builder.append(tabgenerator()+"<and  mandatory=\"true\" name =\"PresentationsNiveau"+i+"\">\n");
+        builder.append(tabgenerator()+"<and  mandatory=\"true\" name =\"Presentations"+i+"\">\n");
         tab++;
         for(int j = 0; j < niveau.getPresentations().size();j++){
             visit(niveau.getPresentations().get(j), i);
@@ -147,7 +147,7 @@ public class Generator extends Visitor<StringBuilder>{
 
     @Override
     public void visit(Variable variable, Class< ? extends Variable> kind,String from) {
-        builder.append(tabgenerator()+"<feature  mandatory=\"true\" name =\""+from+variable.getNom()+"\"/>\n");
+        builder.append(tabgenerator()+"<feature  mandatory=\"true\" name =\""+variable.getNom()+from+"\"/>\n");
     }
 
     @Override
